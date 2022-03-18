@@ -89,16 +89,17 @@ function Main() {
             </div>
           </div>
           <div>
-            <p className="pushComment" />
-            <div className="comment" />
-            <input
-              className="commnetInput"
-              type="text"
-              placeholder="댓글달기..."
-            />
-            <button className="commentButton" type="button">
-              개시
-            </button>
+            <form className="commentForm">
+              <div className="comment" />
+              <input
+                className="commnetInput"
+                type="text"
+                placeholder="댓글달기..."
+              />
+              <button className="commentButton" type="button">
+                개시
+              </button>
+            </form>
           </div>
         </div>
       </article>
