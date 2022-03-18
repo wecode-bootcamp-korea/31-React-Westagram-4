@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../../heedongChoi/Login/LoginHee.scss';
+import { useState } from 'react';
 
 function LoginHee() {
   const navigate = useNavigate();
@@ -8,8 +9,10 @@ function LoginHee() {
     navigate('/hee/Main');
   };
 
+  const [id, setId] = useState('');
+
   return (
-    <div>
+    <div className="loginHee">
       <form action="" method="post">
         <section className="loginContainer">
           <h1>Westagram</h1>

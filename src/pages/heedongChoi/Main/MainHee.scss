@@ -1,9 +1,6 @@
-$sub-color: #c1c1c1;
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
-@mixin a {
-  justify-content: space-between;
-  align-items: center;
-}
+$sub-color: #c1c1c1;
 
 @mixin asideWrapper($height: 150px) {
   height: $height;
@@ -34,7 +31,7 @@ $sub-color: #c1c1c1;
   font-size: 8px;
 }
 
-body {
+.mainWrapper {
   min-width: 1000px;
   background-color: #f2f2f2;
 
