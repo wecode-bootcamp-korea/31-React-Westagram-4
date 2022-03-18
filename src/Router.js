@@ -17,13 +17,10 @@ import MainKyung from './pages/kyunghyunKim/Main/MainKyung';
 import LoginSeo from './pages/seoyeongYoon/Login/LoginSeo';
 import MainSeo from './pages/seoyeongYoon/Main/MainSeo';
 
-import Nav from './components/Nav/Nav';
-
 function Router() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/nav>" element={<Nav />} />
         <Route path="/jung/login" element={<LoginJung />} />
         <Route path="/jung/main" element={<MainJung />} />
         <Route path="/bo/login" element={<LoginBo />} />

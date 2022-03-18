@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 // import { Link } from "react-router-dom";
 
 import '../Login/LoginBo.scss';
+import '../../../styles/common.scss';
 
 function Login() {
   const navigate = useNavigate();

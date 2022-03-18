@@ -1,3 +1,8 @@
+@mixin ul {
+  list-style: none;
+  padding-left: 0px;
+}
+
 .main {
   width: 100%;
   height: 100%;
@@ -76,6 +81,7 @@
             padding-left: 10px;
 
             li {
+              @include ul;
               .state_btn {
                 width: 30px;
                 height: 30px;
