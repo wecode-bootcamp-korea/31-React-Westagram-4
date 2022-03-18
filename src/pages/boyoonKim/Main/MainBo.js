@@ -17,7 +17,6 @@ import Nav from '../../../components/Nav/Nav';
 const Main = () => {
   return (
     <div>
-      <Nav />
       <main className="main">
         <div className="main_container">
           <div className="main_feeds_left">

@@ -1,8 +1,8 @@
-@mixin ul {
-  list-style: none;
-  padding-left: 0px;
-}
-
+@import './../../../styles/common.scss';
+// @mixin ul {
+//   list-style: none;
+//   padding-left: 0px;
+// }
 .main {
   width: 100%;
   height: 100%;
