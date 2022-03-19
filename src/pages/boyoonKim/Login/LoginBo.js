@@ -7,8 +7,9 @@ import '../../../styles/common.scss';
 
 function Login() {
   const [id, setId] = useState('');
-
   const [pw, setPw] = useState('');
+
+  const btn = document.querySelector('.loginBtn');
 
   const navigate = useNavigate();
 
@@ -26,6 +27,17 @@ function Login() {
     setPw(event.target.value);
   }
 
+  function handleBtn() {
+    id.includes('@') === true && pw.length > 5
+      ? (btn.style.backgroundColor = '#458EFF')
+      : (btn.style.backgroundColor = '#c0dffd');
+    // if (id.includes('@') === true && pw.length > 5) {
+    //   btn.style.backgroundColor = 'black';
+    // } else {
+    //   btn.style.backgroundColor = '#c0dffd';
+    // }
+  }
+
   return (
     <div className="wrap">
       <div className="container">
@@ -37,12 +49,14 @@ function Login() {
               type="text"
               placeholder="전화번호, 사용자 이름 또는 이메일"
               onChange={handleInput}
+              onInput={handleBtn}
             />
             <input
               className="loginPwd"
               type="password"
               placeholder="비밀번호"
               onChange={handlePwInput}
+              onInput={handleBtn}
             />
             {/* <button className="loginBtn" type="button"><Link to="/main">로그인</Link></button> */}
             <button className="loginBtn" type="button" onClick={goToMain}>
