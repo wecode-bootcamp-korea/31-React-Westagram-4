@@ -8,6 +8,33 @@ body {
   height: 100%;
 }
 
+// main {
+//   .feeds {
+//     article {
+//       .user {
+
+//       }
+
+//       .user_img{
+
+//       }
+
+//       .comment{
+//         .commentIcon{
+
+//         }
+//         .commentLI
+
+//       }
+
+//     }
+
+//   }
+//   aside {
+
+//   }
+// }
+
 .westagram {
   display: flex;
   justify-content: center;
@@ -33,13 +60,18 @@ body {
   width: 295px;
 }
 
-input {
+.login input {
   background-color: whitesmoke;
   border-radius: 2px;
   border: 1px solid rgb(236, 234, 234);
   width: 100%;
   padding: 10px;
   margin-top: 3px;
+  height: 40px;
+}
+
+.userId {
+  padding: 20px;
 }
 
 .loginButton {

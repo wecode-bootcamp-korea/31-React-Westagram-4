@@ -1,52 +1,13 @@
 import React from 'react';
 import '../Main/MainKyung.scss';
 import Nav from '../../../components/Nav/Nav';
+import '../../../styles/common.scss';
+import '../../../styles/reset.scss';
 
 function Main() {
   return (
     <>
       <Nav />
-      {/* <nav class="navbar">
-        <div class="navbar_logo">
-          <i class="fa-brands fa-instagram" />
-          <a href="!#">westagram</a>
-        </div>
-
-        <div class="navbarSearch">
-          <input type="search" placeholder="검색" />
-          <i class="fa-solid fa-magnifying-glass" />
-        </div>
-
-        <div class="navbar_icons">
-          <button>
-            <img
-              src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/explore.png"
-              alt="탐색"
-            />
-          </button>
-          <button>
-            <img
-              src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png"
-              alt="하트"
-            />
-          </button>
-          <button>
-            <img
-              src=" https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/profile.png"
-              alt="마이페이지"
-            />
-          </button>
-        </div>
-      </nav> */}
-
-      {/* <main>
-        <div className="feeds">
-          <article>
-
-          </article>
-        </div>
-        <div className="main-right"></div>
-      </main> */}
 
       <main>
         <div class="feeds">
