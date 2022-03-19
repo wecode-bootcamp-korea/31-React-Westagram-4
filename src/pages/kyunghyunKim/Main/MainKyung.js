@@ -1,10 +1,12 @@
 import React from 'react';
 import '../Main/MainKyung.scss';
+import Nav from '../../../components/Nav/Nav';
 
 function Main() {
   return (
     <>
-      <nav class="navbar">
+      <Nav />
+      {/* <nav class="navbar">
         <div class="navbar_logo">
           <i class="fa-brands fa-instagram" />
           <a href="!#">westagram</a>
@@ -35,7 +37,7 @@ function Main() {
             />
           </button>
         </div>
-      </nav>
+      </nav> */}
 
       {/* <main>
         <div className="feeds">
