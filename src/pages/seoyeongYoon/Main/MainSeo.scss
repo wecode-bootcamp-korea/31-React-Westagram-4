@@ -1,34 +1,36 @@
-body,
-div,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-textarea,
-p,
-blockquote,
-th,
-td,
-input,
-select,
-button,
-label {
-  margin: 0;
-  padding: 0;
-}
+@import '../../../styles/reset.scss';
+@import '../../../styles/common.scss';
+// body,
+// div,
+// dl,
+// dt,
+// dd,
+// ul,
+// ol,
+// li,
+// h1,
+// h2,
+// h3,
+// h4,
+// h5,
+// h6,
+// pre,
+// code,
+// form,
+// fieldset,
+// legend,
+// textarea,
+// p,
+// blockquote,
+// th,
+// td,
+// input,
+// select,
+// button,
+// label {
+//   margin: 0;
+//   padding: 0;
+// }
 * {
   box-sizing: border-box;
   text-decoration: none;
@@ -231,7 +233,7 @@ label {
             border: 0;
             cursor: pointer;
             color: rgb(64, 132, 221);
-            font-weight: bold;
+            font-weight: $fontWeight;
             span {
             }
           }
@@ -274,7 +276,7 @@ label {
           .follow_title {
             display: flex;
             justify-content: space-between;
-            font-weight: bold;
+            font-weight: $fontWeight;
             .stroy {
             }
             a {
@@ -317,7 +319,7 @@ label {
             justify-content: space-between;
             margin-bottom: 5px;
             span {
-              font-weight: bold;
+              font-weight: $fontWeight;
             }
             a {
               span {
@@ -344,7 +346,7 @@ label {
               position: absolute;
               right: 0;
               color: rgb(34, 119, 230);
-              font-weight: bold;
+              font-weight: $fontWeight;
               span {
                 font-size: 0.8rem;
               }

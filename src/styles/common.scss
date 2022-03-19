@@ -1,0 +1,19 @@
+$boxSize: border-box;
+$font: url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital@0;1&display=swap');
+$border: 1px solid #bbb;
+$fontWeight: bold;
+$textDeco: none;
+
+@mixin ul {
+  list-style: none;
+  padding-left: 0px;
+}
+
+@mixin li {
+}
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
