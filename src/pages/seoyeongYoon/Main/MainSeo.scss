@@ -1,36 +1,6 @@
 @import '../../../styles/reset.scss';
 @import '../../../styles/common.scss';
-// body,
-// div,
-// dl,
-// dt,
-// dd,
-// ul,
-// ol,
-// li,
-// h1,
-// h2,
-// h3,
-// h4,
-// h5,
-// h6,
-// pre,
-// code,
-// form,
-// fieldset,
-// legend,
-// textarea,
-// p,
-// blockquote,
-// th,
-// td,
-// input,
-// select,
-// button,
-// label {
-//   margin: 0;
-//   padding: 0;
-// }
+
 * {
   box-sizing: border-box;
   text-decoration: none;
@@ -74,8 +44,6 @@
           .logo_text {
             font-size: 1.3rem;
             font-family: 'Lobster Two';
-            p {
-            }
           }
         }
       }
@@ -174,10 +142,6 @@
             height: 2rem;
             margin: 4px 10px 0 6px;
           }
-          .comments_box_like_id {
-            span {
-            }
-          }
         }
         .comments_text {
           position: relative;
@@ -233,6 +197,7 @@
             border: 0;
             cursor: pointer;
             color: rgb(64, 132, 221);
+            background-color: #fff;
             font-weight: $fontWeight;
             span {
             }
@@ -277,12 +242,6 @@
             display: flex;
             justify-content: space-between;
             font-weight: $fontWeight;
-            .stroy {
-            }
-            a {
-              span {
-              }
-            }
           }
           .follow_list_scroll {
             overflow-y: auto;
@@ -302,10 +261,6 @@
                 display: flex;
                 flex-direction: column;
                 padding-left: 20px;
-                p {
-                }
-                p {
-                }
               }
             }
           }
@@ -321,10 +276,6 @@
             span {
               font-weight: $fontWeight;
             }
-            a {
-              span {
-              }
-            }
           }
           .recommend_info {
             position: relative;
@@ -335,12 +286,6 @@
               width: 35px;
               height: 35px;
               margin-right: 20px;
-            }
-            .recommend_id {
-              p {
-              }
-              p {
-              }
             }
             a {
               position: absolute;

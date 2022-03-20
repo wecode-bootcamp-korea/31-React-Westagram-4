@@ -1,8 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../../seoyeongYoon/Main/MainSeo.scss';
 import Nav from '../../../components/Nav/Nav';
 
 const Main = () => {
+  let [입력, 입력변경] = useState('');
+  let [댓글, 댓글변경] = useState(['']);
+
+  const x = e => {
+    //댓글입력값
+    입력변경(e.target.value);
+  };
+  const y = () => {
+    const a = [...댓글]; //a라는 변수를 ...댓글 이라는 배열로 만들어줘라
+    a.push(입력); //배열의 마지막에 새로운 요소를 추가한 후, 변경된 배열의 길이를 반환
+    댓글변경(a); //수정할땐, 변경값에 넣어줘야함
+  };
+
   return (
     <>
       <Nav />
@@ -63,11 +76,13 @@ const Main = () => {
                 <ul className="comments_info comment_list_ul">
                   <li>
                     <div className="comments_tit">
-                      <span className="user_id">wecode_31&nbsp;</span>
-                      <span className="comment_contents">행복하다</span>
-                      <div className="small_heart">
-                        <div className="heart"></div>
-                      </div>
+                      <span className="user_id"></span>
+                      <span className="comment_contents"></span>
+                      <ul>
+                        {댓글.map(e => {
+                          return <li>seo0 {e}</li>;
+                        })}
+                      </ul>
                     </div>
                   </li>
                 </ul>
@@ -78,13 +93,14 @@ const Main = () => {
               <div className="input_box">
                 <input
                   type="text"
-                  placeholder="댓글달기..."
+                  placeholder="댓글달기✏️"
                   id="comment_input"
+                  onChange={x} //X함수값이 변경되면 발생
                 />
               </div>
               <div className="button_box">
-                <button type="button" className="post_btn" disabled="disabled">
-                  <span className="">게시</span>
+                <button type="button" className="post_btn" onClick={y}>
+                  게시
                 </button>
               </div>
             </form>
