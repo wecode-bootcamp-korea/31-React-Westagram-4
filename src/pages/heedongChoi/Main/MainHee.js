@@ -1,10 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../../heedongChoi/Main/MainHee.scss';
 import '../Main/Aside/AsideHee';
 import AsideHee from '../Main/Aside/AsideHee';
 import Nav from '../../../components/Nav/Nav';
+// import CommentList from './CommentList';
+// import CommentInput from './CommentInput';
 
 const MainHee = () => {
+  const [comment, setComment] = useState('');
+  const [commentArray, setCommentArray] = useState([]);
+
+  const onChange = event => {
+    setComment(event.target.value);
+  };
+
+  const onSubmit = event => {
+    event.preventDefault();
+    if (comment === '') {
+      return;
+    }
+    setCommentArray(commentValueList => [...commentValueList, comment]);
+    setComment('');
+  };
+
   return (
     <>
       <Nav />
@@ -54,19 +72,27 @@ const MainHee = () => {
                   </p>
                 </div>
 
+                {/* <CommentList /> */}
                 <ul id="commentLists">
-                  <li>
-                    <span className="name">cat</span>
-                    <span className="commentSentence">야옹</span>
-                  </li>
+                  {commentArray.map((value, index) => (
+                    <li key={index} className="commentText">
+                      <div>
+                        <span className="commentor">cat</span>
+                        {value}
+                      </div>
+                    </li>
+                  ))}
                 </ul>
               </div>
 
-              <form className="commentInputWrapper">
+              {/* <CommentInput /> */}
+              <form className="commentInputWrapper" onSubmit={onSubmit}>
                 <input
                   id="commentInput"
                   type="text"
+                  value={comment}
                   placeholder="댓글 달기..."
+                  onChange={onChange}
                 />
                 <button id="submit">게시</button>
               </form>

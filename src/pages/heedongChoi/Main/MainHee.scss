@@ -134,7 +134,6 @@ $sub-color: #c1c1c1;
         .commentLike {
           display: flex;
           align-items: center;
-          margin: 15px 0;
 
           .countPeopleLike {
             margin-left: 10px;
@@ -148,7 +147,7 @@ $sub-color: #c1c1c1;
           li {
             list-style: none;
             width: 100%;
-            .name {
+            .commentor {
               margin-right: 10px;
               font-weight: bold;
             }
