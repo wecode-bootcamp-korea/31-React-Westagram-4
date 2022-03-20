@@ -1,10 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../Main/MainKyung.scss';
 import Nav from '../../../components/Nav/Nav';
 import '../../../styles/common.scss';
 import '../../../styles/reset.scss';
 
 function Main() {
+  const [comment, setComment] = useState('');
+  const [commentArray, setCommentArray] = useState([]);
+  function handleCommentsInput(event) {
+    setComment(event.target.value);
+  }
+  function handleOnSubmit(event) {
+    event.preventDefault();
+    if (comment === '') {
+      return;
+    }
+    setCommentArray(comments => [...comments, comment]);
+    setComment('');
+  }
   return (
     <>
       <Nav />
@@ -37,17 +50,26 @@ function Main() {
               </div>
 
               <ul className="commentLists">
-                <li>
+                {commentArray.map((value, index) => (
+                  <li key={index}>
+                    <div>
+                      <span>kyunghyun</span> {value}
+                    </div>
+                  </li>
+                ))}
+                {/* <li>
                   <span className="name">Kyunghyun</span>
                   <span>위코드 안뇽</span>
-                </li>
+                </li> */}
               </ul>
 
-              <form className="comments">
+              <form className="comments" onSubmit={handleOnSubmit}>
                 <input
                   id="commentInput"
                   type="text"
                   placeholder="댓글 달기..."
+                  value={comment}
+                  onChange={handleCommentsInput}
                 />
                 <button id="submit">게시</button>
               </form>
