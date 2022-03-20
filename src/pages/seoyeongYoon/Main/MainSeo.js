@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../../seoyeongYoon/Main/MainSeo.scss';
 import Nav from '../../../components/Nav/Nav';
+import Comment from '../Main/Comment';
 
 const Main = () => {
   let [입력, 입력변경] = useState('');
@@ -19,6 +20,7 @@ const Main = () => {
   return (
     <>
       <Nav />
+      <Comment />
       <div className="container">
         <main className="main_box">
           <div className="contents_left">
@@ -79,8 +81,8 @@ const Main = () => {
                       <span className="user_id"></span>
                       <span className="comment_contents"></span>
                       <ul>
-                        {댓글.map(e => {
-                          return <li>seo0 {e}</li>;
+                        {댓글.map(item => {
+                          return <Comment comment={item} />;
                         })}
                       </ul>
                     </div>
