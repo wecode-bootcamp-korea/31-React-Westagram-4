@@ -3,7 +3,7 @@ import '../../heedongChoi/Main/MainHee.scss';
 import '../Main/Aside/AsideHee';
 import AsideHee from '../Main/Aside/AsideHee';
 import Nav from '../../../components/Nav/Nav';
-// import CommentList from './CommentList';
+import CommentList from './CommentList';
 // import CommentInput from './CommentInput';
 
 const MainHee = () => {
@@ -27,19 +27,6 @@ const MainHee = () => {
     <>
       <Nav />
       <div className="mainWrapper">
-        {/* <nav>
-          <div className="navLogo">
-            <i className="fa-solid fa-camera-retro" />
-            <span className="navWestagram">Westagram</span>
-          </div>
-          <input className="searchBar" type="text" placeholder="검색" />
-          <div className="navIconWrapper">
-            <i className="fa-solid fa-compass" />
-            <i className="fa-regular fa-heart" />
-            <i className="fa-regular fa-user" />
-          </div>
-        </nav> */}
-
         <main className="mainContainer">
           <article>
             <section className="feed">
@@ -72,20 +59,13 @@ const MainHee = () => {
                   </p>
                 </div>
 
-                {/* <CommentList /> */}
                 <ul id="commentLists">
                   {commentArray.map((value, index) => (
-                    <li key={index} className="commentText">
-                      <div>
-                        <span className="commentor">cat</span>
-                        {value}
-                      </div>
-                    </li>
+                    <CommentList key={index} value={value} />
                   ))}
                 </ul>
               </div>
 
-              {/* <CommentInput /> */}
               <form className="commentInputWrapper" onSubmit={onSubmit}>
                 <input
                   id="commentInput"

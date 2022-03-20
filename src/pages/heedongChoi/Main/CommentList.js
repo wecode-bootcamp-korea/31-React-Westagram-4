@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const CommentList = () => {
+const CommentList = props => {
   return (
-    <ul id="commentLists">
-      <li />
-    </ul>
+    <li className="commentText">
+      <div>
+        <span className="commentor">cat</span>
+        {props.value}
+      </div>
+    </li>
   );
 };
 
