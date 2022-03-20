@@ -3,6 +3,7 @@ import '../Main/MainKyung.scss';
 import Nav from '../../../components/Nav/Nav';
 import '../../../styles/common.scss';
 import '../../../styles/reset.scss';
+import Comment from './Comment';
 
 function Main() {
   const [comment, setComment] = useState('');
@@ -51,16 +52,8 @@ function Main() {
 
               <ul className="commentLists">
                 {commentArray.map((value, index) => (
-                  <li key={index}>
-                    <div>
-                      <span>kyunghyun</span> {value}
-                    </div>
-                  </li>
+                  <Comment key={index} index={index} value={value} />
                 ))}
-                {/* <li>
-                  <span className="name">Kyunghyun</span>
-                  <span>위코드 안뇽</span>
-                </li> */}
               </ul>
 
               <form className="comments" onSubmit={handleOnSubmit}>
