@@ -18,12 +18,10 @@ function Login() {
   };
 
   function handleInput(event) {
-    console.log(event.target);
     setId(event.target.value);
   }
 
   function handlePwInput(event) {
-    console.log(event);
     setPw(event.target.value);
   }
 

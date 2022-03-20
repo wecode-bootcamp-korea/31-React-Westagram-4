@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../Main/MainBo.scss';
 // import '.././../Styles/Common.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -9,12 +9,32 @@ import {
 } from '@fortawesome/free-regular-svg-icons';
 import {
   faArrowUpFromBracket,
+  faEnvelopeCircleCheck,
   faMagnifyingGlass,
 } from '@fortawesome/free-solid-svg-icons';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import Nav from '../../../components/Nav/Nav';
+import CommentsBox from './CommentsBox';
 
 const Main = () => {
+  const [comments, setComments] = useState('');
+  const [commentArray, setCommentArray] = useState([]);
+
+  const onSubmit = event => {
+    event.preventDefault(); // 배열이 초기화 되지 않도록. 댓글 쌓일 수 있게
+    if (comments === '') {
+      return;
+    }
+    setCommentArray(commentsValueList => [...commentsValueList, comments]);
+    setComments('');
+  };
+
+  function handleInput(event) {
+    setComments(event.target.value);
+    // console.log(event.target);
+    // console.log(comments);
+  }
+
   return (
     <div>
       <Nav />
@@ -99,28 +119,49 @@ const Main = () => {
                             더보기
                           </button>
                         </div>
+                        {/* <CommentsBox /> */}
                         <div className="comments_title_line">
                           <div>
                             <span className="user_id">아이디</span>
-                            <span className="comments_contents">
-                              흔들리지 말 것!
-                            </span>
+                            <span className="comments_contents"></span>
                           </div>
                           <button type="button">
                             <FontAwesomeIcon icon={faHeart} />
                           </button>
                         </div>
-                        <div className="main_left_box_comment"></div>
+                        <div className="main_left_box_comment">
+                          <ul>
+                            {commentArray.map((value, index) => (
+                              <li key={index}>
+                                <div>
+                                  <span className="user_id">아이디</span>
+                                  <span clsssName="comments_contents">
+                                    {value}
+                                  </span>
+                                </div>
+                                <button type="button">
+                                  <FontAwesomeIcon icon={faHeart} />
+                                </button>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
                       </li>
                     </ul>
                   </div>
                   <div className="feeds_time">
                     <p className="time">42분 전</p>
                   </div>
-                  <div className="comments_div">
-                    <input type="text" placeholder="댓글 달기..." />
-                    <button type="button">게시</button>
-                  </div>
+                  <form className="comments_div" onSubmit={onSubmit}>
+                    <input
+                      type="text"
+                      placeholder="댓글 달기..."
+                      value={comments}
+                      onChange={handleInput}
+                      // onKeypress={handleInput}
+                    />
+                    <button>게시</button>
+                  </form>
                 </div>
               </div>
             </div>
