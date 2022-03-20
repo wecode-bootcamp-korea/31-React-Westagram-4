@@ -1,41 +1,10 @@
 import '../Main/MainJung.scss';
+import Nav from '../../../components/Nav/Nav';
 
 function Main() {
   return (
     <>
-      <nav className="Login">
-        <div className="navLeft">
-          <div className="Insata">
-            <img
-              alt="insta"
-              className="icon"
-              src="/image/jungsooKim/instagram.png"
-            />
-          </div>
-          <span className="changeFont2">Westagram</span>
-        </div>
-        <div className="SearchWrapper">
-          <input className="Search" type="text" placeholder="검색" />
-          <i className="fa-solid fa-magnifying-glass" />
-        </div>
-        <div className="navRight">
-          <img
-            alt="탐색"
-            className="icon"
-            src="/image/jungsooKim/explore.png"
-          />
-          <img
-            alt="좋아요"
-            className="icon"
-            src="/image/jungsooKim/heart.png"
-          />
-          <img
-            alt="프로필"
-            className="icon"
-            src="/image/jungsooKim/profile.png"
-          />
-        </div>
-      </nav>
+      <Nav />
 
       <article className="mainBox">
         <div className="top">

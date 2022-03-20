@@ -1,4 +1,5 @@
 import '../MainJung.scss';
+import '../../../../styles/common.scss';
 
 const Comment = () => {};
 
