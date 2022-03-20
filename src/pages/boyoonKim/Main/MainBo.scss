@@ -8,7 +8,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 30px;
+  // height: 30px;
 }
 
 @mixin commentsInfo {
@@ -154,7 +154,7 @@
             }
 
             .comments_info {
-              height: 30px;
+              height: 20px;
               padding-top: 10px;
               padding-left: 10px;
 
@@ -169,6 +169,7 @@
               padding-left: 10px;
 
               li {
+                list-style: none;
                 .comments_title {
                   .user_id,
                   .comments_contents {
@@ -184,32 +185,11 @@
                   }
                 }
 
-                .comments_title_line {
-                  display: flex;
-                  justify-content: space-between;
-                  align-items: center;
-                  height: 30px;
-
-                  div {
-                    .user_id,
-                    .comments_contents {
-                      width: 100%;
-                      padding-right: 8px;
-                    }
-                  }
-
-                  button {
-                    width: 30px;
-                    margin-right: 3px;
-                    background-color: #fff;
-                    border: none;
-                    font-size: 15px;
-                  }
-                }
                 .main_left_box_comment {
                   ul {
                     @include ul;
                     li {
+                      @include commentsLine;
                       div {
                         span {
                           @include commentsInfo;
@@ -241,7 +221,7 @@
 
             input {
               width: calc(100% - 40px);
-              height: 40px;
+              height: 45px;
               padding-left: 10px;
               color: #b9b9b9;
               background-color: #fff;
@@ -308,7 +288,6 @@
       .box_top {
         display: flex;
         justify-content: space-between;
-        height: 50px;
         padding-top: 20px;
         padding-left: 10px;
         background-color: #fff;
@@ -355,7 +334,7 @@
               margin-left: 10px;
 
               p {
-                height: 30px;
+                height: 20px;
                 margin: 0;
                 padding-top: 10px;
               }

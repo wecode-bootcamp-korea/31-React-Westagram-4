@@ -7,12 +7,7 @@ import {
   faComment,
   faBookmark,
 } from '@fortawesome/free-regular-svg-icons';
-import {
-  faArrowUpFromBracket,
-  faEnvelopeCircleCheck,
-  faMagnifyingGlass,
-} from '@fortawesome/free-solid-svg-icons';
-import { faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faArrowUpFromBracket } from '@fortawesome/free-solid-svg-icons';
 import Nav from '../../../components/Nav/Nav';
 import CommentsBox from './CommentsBox';
 
@@ -31,8 +26,6 @@ const Main = () => {
 
   function handleInput(event) {
     setComments(event.target.value);
-    // console.log(event.target);
-    // console.log(comments);
   }
 
   return (
@@ -119,30 +112,14 @@ const Main = () => {
                             더보기
                           </button>
                         </div>
-                        {/* <CommentsBox /> */}
-                        <div className="comments_title_line">
-                          <div>
-                            <span className="user_id">아이디</span>
-                            <span className="comments_contents"></span>
-                          </div>
-                          <button type="button">
-                            <FontAwesomeIcon icon={faHeart} />
-                          </button>
-                        </div>
                         <div className="main_left_box_comment">
                           <ul>
                             {commentArray.map((value, index) => (
-                              <li key={index}>
-                                <div>
-                                  <span className="user_id">아이디</span>
-                                  <span clsssName="comments_contents">
-                                    {value}
-                                  </span>
-                                </div>
-                                <button type="button">
-                                  <FontAwesomeIcon icon={faHeart} />
-                                </button>
-                              </li>
+                              <CommentsBox
+                                key={(value, index)}
+                                value={value}
+                                index={index}
+                              />
                             ))}
                           </ul>
                         </div>
@@ -158,7 +135,6 @@ const Main = () => {
                       placeholder="댓글 달기..."
                       value={comments}
                       onChange={handleInput}
-                      // onKeypress={handleInput}
                     />
                     <button>게시</button>
                   </form>
