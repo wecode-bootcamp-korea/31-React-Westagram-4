@@ -1,7 +1,31 @@
 import '../Main/MainJung.scss';
 import Nav from '../../../components/Nav/Nav';
+import { React, useState } from 'react';
+// import { createPortal } from 'react-dom';
 
 function Main() {
+  const [comment, setComment] = useState('');
+  const [commentArr, setCommentArr] = useState([]);
+
+  const addCo = comment => {
+    setCommentArr(commentArr => [...commentArr, comment]);
+  };
+
+  const handleCommentInputValue = e => {
+    setComment(e.target.value);
+  };
+
+  const commentUp = e => {
+    addCo(comment);
+    // setComment('');
+  };
+  // const commentEnter = event => {
+  //   if (event.key === 'Enter') {
+  //     addCo(comment);
+  //     setComment('');
+  //   }
+  // }; 만들긴했는데 어따써야될지
+
   return (
     <>
       <Nav />
@@ -57,6 +81,13 @@ function Main() {
               <p>30분전</p>
             </div>
           </div>
+          <div className="commentBox">
+            {commentArr.map((comment, index) => (
+              <li key={index}>
+                <span className="newComment">{comment}</span>
+              </li>
+            ))}
+          </div>
           <div>
             <form className="commentForm">
               <div className="comment" />
@@ -64,8 +95,13 @@ function Main() {
                 className="commnetInput"
                 type="text"
                 placeholder="댓글달기..."
+                onChange={handleCommentInputValue}
               />
-              <button className="commentButton" type="button">
+              <button
+                onClick={commentUp}
+                className="commentButton"
+                type="button"
+              >
                 개시
               </button>
             </form>
