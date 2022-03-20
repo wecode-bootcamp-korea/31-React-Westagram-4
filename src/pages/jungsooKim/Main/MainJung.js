@@ -2,6 +2,7 @@ import '../Main/MainJung.scss';
 import Nav from '../../../components/Nav/Nav';
 import { React, useState } from 'react';
 // import { createPortal } from 'react-dom';
+import Comment from './Comment/Comment';
 
 function Main() {
   const [comment, setComment] = useState('');
@@ -17,7 +18,6 @@ function Main() {
 
   const commentUp = e => {
     addCo(comment);
-    // setComment('');
   };
   // const commentEnter = event => {
   //   if (event.key === 'Enter') {
@@ -83,9 +83,7 @@ function Main() {
           </div>
           <div className="commentBox">
             {commentArr.map((comment, index) => (
-              <li key={index}>
-                <span className="newComment">{comment}</span>
-              </li>
+              <Comment comment={comment} key={index} />
             ))}
           </div>
           <div>
