@@ -46,7 +46,7 @@ const Main = () => {
               />
               <div className="contents_icon_groups">
                 <div className="contents_icon_groups_wrap">
-                  <div className="heart"></div>
+                  <div className="heart" />
                   <img
                     className="comment"
                     src="/image/seoyeongYoon/images/comment.png"
@@ -125,7 +125,7 @@ const Main = () => {
 
               <div className="follow_title_wrap">
                 <div className="follow_title">
-                  <span className="stroy">스토리</span>
+                  <span className="story">스토리</span>
                   <a href="#">
                     <span>모두 보기</span>
                   </a>
@@ -255,7 +255,7 @@ const Main = () => {
                     src="/image/seoyeongYoon/images/위코드.png"
                     alt="profile_image"
                   />
-                  <div clas="recommend_id">
+                  <div class="recommend_id">
                     <p>wecode</p>
                     <p>외 10명..</p>
                   </div>

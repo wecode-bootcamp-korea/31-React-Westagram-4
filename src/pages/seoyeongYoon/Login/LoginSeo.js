@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import '../../seoyeongYoon/Login/LoginSeo.scss';
 
 const Login = () => {
@@ -21,10 +21,10 @@ const Login = () => {
     setPwValue(evt.target.value);
   };
 
-  const navigate = useNavigate();
-  const goToLogin = () => {
-    navigate('/seo/main');
-  };
+  // const navigate = useNavigate();
+  // const goToLogin = () => {
+  //   navigate('/seo/main');
+  // };
 
   const isValid = idValue.includes('@') && pwValue.length >= 5; //버튼활성화조건
 
@@ -39,8 +39,8 @@ const Login = () => {
             <input
               id="id"
               type="email"
-              onChange={handleIdInput} //핸들어쩌고 함수 값이 변경될때, 발생
               placeholder="전화번호, 사용자 이름 또는 이메일"
+              onChange={handleIdInput} //핸들어쩌고 함수 값이 변경될때, 발생
             />
             <input
               id="pw"
