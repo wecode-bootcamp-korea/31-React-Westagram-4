@@ -7,6 +7,8 @@ function Login() {
   const [idValue, setIdValue] = useState('');
   const [pwValue, setPwValue] = useState('');
 
+  const isLoginBtnActive = idValue.includes('@') && pwValue.length >= 5;
+
   const handleIdInput = e => {
     setIdValue(e.target.value);
   };
@@ -34,7 +36,12 @@ function Login() {
         type="password"
         placeholder="비밀번호"
       />
-      <button className="wrap button" type="button" onClick={goToMain}>
+      <button
+        // disabled={isLoginBtnActive ? true : false} 안됨;
+        className={isLoginBtnActive ? 'wrap button' : 'wrap off button'}
+        type="button"
+        onClick={goToMain}
+      >
         로그인
       </button>
       <p className="forget">비밀번호를 잊으셨나요?</p>
