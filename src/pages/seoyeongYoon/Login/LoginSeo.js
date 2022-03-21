@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../../seoyeongYoon/Login/LoginSeo.scss';
 
 const Login = () => {
@@ -21,10 +21,16 @@ const Login = () => {
     setPwValue(evt.target.value);
   };
 
-  // const navigate = useNavigate();
-  // const goToLogin = () => {
-  //   navigate('/seo/main');
-  // };
+  const navigate = useNavigate();
+  const goToLogin = () => {
+    navigate('/seo/main');
+  };
+
+  const keyPressEnter = e => {
+    if (e.key === 'Enter') {
+      navigate('/seo/main');
+    }
+  };
 
   const isValid = idValue.includes('@') && pwValue.length >= 5; //버튼활성화조건
 
@@ -36,24 +42,31 @@ const Login = () => {
             <h1>Westagram</h1>
           </div>
           <div className="input_box">
-            <input
-              id="id"
-              type="email"
-              placeholder="전화번호, 사용자 이름 또는 이메일"
-              onChange={handleIdInput} //핸들어쩌고 함수 값이 변경될때, 발생
-            />
-            <input
-              id="pw"
-              type="password"
-              placeholder="비밀번호를 입력하세요"
-              onChange={handlePwInput}
-            />
-            {/* 조건이 비활성화되야하니까 ! 부정 으로 만들어줌 */}
-            <Link to="/seo/main">
-              <button type="button" className="btn" disabled={!isValid}>
+            <form onSubmit={goToLogin}>
+              <input
+                id="id"
+                type="email"
+                placeholder="전화번호, 사용자 이름 또는 이메일"
+                onChange={handleIdInput} //핸들어쩌고 함수 값이 변경될때, 발생
+              />
+              <input
+                id="pw"
+                type="password"
+                placeholder="비밀번호를 입력하세요"
+                onChange={handlePwInput}
+                onKeyPress={keyPressEnter}
+              />
+              {/* 조건이 비활성화되야하니까 ! 부정 으로 만들어줌 */}
+              <button
+                type="submit"
+                // onKeyPress={keyPressEnter}
+                className="btn"
+                disabled={!isValid}
+                onClick={goToLogin}
+              >
                 로그인
               </button>
-            </Link>
+            </form>
           </div>
           <a href="#">비밀번호를 잊으셨나요?</a>
         </form>

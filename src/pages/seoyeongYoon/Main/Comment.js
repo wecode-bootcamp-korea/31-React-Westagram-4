@@ -1,10 +1,10 @@
 import React from 'react';
-import '../../seoyeongYoon/Main/MainSeo.scss';
+// import '../../seoyeongYoon/Main/MainSeo.scss';
 
 const Comment = ({ comment }) => {
   return (
     <>
-      <li>seo0 {comment}</li>
+      <div>seo0 {comment}</div>
     </>
   );
 };

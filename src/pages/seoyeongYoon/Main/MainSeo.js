@@ -4,23 +4,29 @@ import Nav from '../../../components/Nav/Nav';
 import Comment from '../Main/Comment';
 
 const Main = () => {
-  let [입력, 입력변경] = useState('');
-  let [댓글, 댓글변경] = useState(['']);
+  let [comment, setComment] = useState('');
+  let [commentArr, setCommentArr] = useState([]);
 
   const x = e => {
     //댓글입력값
-    입력변경(e.target.value);
+    setComment(e.target.value);
   };
-  const y = () => {
-    const a = [...댓글]; //a라는 변수를 ...댓글 이라는 배열로 만들어줘라
-    a.push(입력); //배열의 마지막에 새로운 요소를 추가한 후, 변경된 배열의 길이를 반환
-    댓글변경(a); //수정할땐, 변경값에 넣어줘야함
+  // const y = e => {
+  //   e.preventDefault();
+  //   setCommentArr(arr => [...arr, comment]);
+  //   setComment('');
+
+  const yy = e => {
+    e.preventDefault();
+    const y = [...commentArr]; //a라는 변수를 ...댓글 이라는 배열로 만들어줘라
+    y.push(comment); //배열의 마지막에 새로운 요소를 추가한 후, 변경된 배열의 길이를 반환
+    setCommentArr(y); //수정할땐, 변경값에 넣어줘야함
+    setComment('');
   };
 
   return (
     <>
       <Nav />
-      <Comment />
       <div className="container">
         <main className="main_box">
           <div className="contents_left">
@@ -75,33 +81,32 @@ const Main = () => {
               </div>
 
               <div className="comments_text">
-                <ul className="comments_info comment_list_ul">
-                  <li>
-                    <div className="comments_tit">
-                      <span className="user_id"></span>
-                      <span className="comment_contents"></span>
-                      <ul>
-                        {댓글.map(item => {
-                          return <Comment comment={item} />;
-                        })}
-                      </ul>
+                <div className="comments_info comment_list_ul">
+                  <div className="comments_tit">
+                    <span className="user_id"></span>
+                    <span className="comment_contents"></span>
+                    <div>
+                      {commentArr.map((item, index) => {
+                        return <Comment comment={item} key={index} />;
+                      })}
                     </div>
-                  </li>
-                </ul>
+                  </div>
+                </div>
               </div>
             </div>
 
-            <form className="comments_form">
+            <form onSubmit={yy} className="comments_form">
               <div className="input_box">
                 <input
                   type="text"
                   placeholder="댓글달기✏️"
                   id="comment_input"
                   onChange={x} //X함수값이 변경되면 발생
+                  value={comment} //벨류는 커먼트의 요소값으로 받는다?
                 />
               </div>
               <div className="button_box">
-                <button type="button" className="post_btn" onClick={y}>
+                <button type="button" className="post_btn" onClick={yy}>
                   게시
                 </button>
               </div>
