@@ -8,24 +8,14 @@ function Main() {
   const [comment, setComment] = useState('');
   const [commentArr, setCommentArr] = useState([]);
 
-  const addCo = comment => {
+  const addCo = event => {
+    event.preventDefault();
     setCommentArr(commentArr => [...commentArr, comment]);
   };
 
   const handleCommentInputValue = e => {
     setComment(e.target.value);
   };
-
-  const commentUp = e => {
-    addCo(comment);
-  };
-  // const commentEnter = event => {
-  //   if (event.key === 'Enter') {
-  //     addCo(comment);
-  //     setComment('');
-  //   }
-  // }; 만들긴했는데 어따써야될지
-
   return (
     <>
       <Nav />
@@ -95,11 +85,7 @@ function Main() {
                 placeholder="댓글달기..."
                 onChange={handleCommentInputValue}
               />
-              <button
-                onClick={commentUp}
-                className="commentButton"
-                type="button"
-              >
+              <button onClick={addCo} className="commentButton" type="button">
                 개시
               </button>
             </form>
