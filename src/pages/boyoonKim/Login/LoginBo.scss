@@ -44,7 +44,18 @@
           outline: 0;
         }
 
-        .loginBtn {
+        .activeBtn {
+          width: 250px;
+          height: 35px;
+          margin-top: 7px;
+          padding: 0;
+          border: 0;
+          border-radius: 3px;
+          color: #fff;
+          background-color: #0095f6;
+        }
+
+        .noneBtn {
           width: 250px;
           height: 35px;
           margin-top: 7px;
