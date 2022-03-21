@@ -27,8 +27,17 @@
           height: 36px;
           margin-bottom: 8px;
         }
-        button {
+        .loginButtonNotActive {
           background-color: #b2dffc;
+          border: 0px;
+          border-radius: 5px;
+          width: 265px;
+          height: 30px;
+          color: white;
+          cursor: pointer;
+        }
+        .loginButtonActive {
+          background-color: blue;
           border: 0px;
           border-radius: 5px;
           width: 265px;

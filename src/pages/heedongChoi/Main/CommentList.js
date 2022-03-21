@@ -2,7 +2,7 @@ import React from 'react';
 
 const CommentList = props => {
   return (
-    <li className="commentText">
+    <li key={props.index} className="commentText">
       <div>
         <span className="commentor">cat</span>
         {props.value}
