@@ -8,6 +8,7 @@ import Comment from './Comment';
 function Main() {
   const [comment, setComment] = useState('');
   const [commentArray, setCommentArray] = useState([]);
+
   function handleCommentsInput(event) {
     setComment(event.target.value);
   }

@@ -5,10 +5,8 @@ import '../../../styles/common.scss';
 import '../../../styles/reset.scss';
 
 function Login() {
-  const [id, setId] = useState();
-  const [pw, setPw] = useState();
-
-  const button = document.querySelector('button');
+  const [id, setId] = useState('');
+  const [pw, setPw] = useState('');
 
   function handleIdInput(event) {
     //console.log(event);
@@ -16,14 +14,10 @@ function Login() {
     //console.log(id);
   }
 
+  const valid = id.includes('@') && pw.length >= 5;
+
   function handlePwInput(event) {
     setPw(event.target.value);
-  }
-
-  function handleIdValue() {
-    id.includes('@') && pw.length >= 5
-      ? (button.style.backgroundColor = '#458EFF')
-      : (button.style.backgroundColor = 'rgba(119, 178, 233, 0.5)');
   }
 
   return (
@@ -36,18 +30,19 @@ function Login() {
             type="text"
             placeholder="전화번호, 사용자 이름 또는 이메일"
             onChange={handleIdInput}
-            onInput={handleIdValue}
+            value={id}
           />
           <input
-            //onInput="handleIdValue()"
             id="password"
             type="password"
             placeholder="비밀번호"
             onChange={handlePwInput}
-            onInput={handleIdValue}
+            value={pw}
           />
         </div>
-        <button className="loginButton">로그인</button>
+        <button className={valid ? 'loginButton' : 'loginButton2'}>
+          로그인
+        </button>
       </section>
     </div>
   );
