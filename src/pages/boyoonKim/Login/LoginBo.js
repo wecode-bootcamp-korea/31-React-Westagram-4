@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-// import { Link } from "react-router-dom";
-
 import '../Login/LoginBo.scss';
 import '../../../styles/common.scss';
 
@@ -9,7 +7,7 @@ function Login() {
   const [id, setId] = useState('');
   const [pw, setPw] = useState('');
 
-  const valid = id.includes('@') === true && pw.length > 5;
+  const isInputValid = id.includes('@') && pw.length >= 5;
 
   const navigate = useNavigate();
 
@@ -18,11 +16,13 @@ function Login() {
   };
 
   function handleInput(event) {
-    setId(event.target.value);
+    const { value } = event.target;
+    setId(value);
   }
 
   function handlePwInput(event) {
-    setPw(event.target.value);
+    const { value } = event.target;
+    setPw(value);
   }
 
   return (
@@ -36,19 +36,18 @@ function Login() {
               type="text"
               placeholder="전화번호, 사용자 이름 또는 이메일"
               onChange={handleInput}
-              value={id}
+              value={id} // 재렌더링을 위해서 부여함
             />
             <input
               className="loginPwd"
               type="password"
               placeholder="비밀번호"
               onChange={handlePwInput}
-              value={pw}
-              // onInput={handleBtn}
+              value={pw} // 재렌더링을 위해서 부여함
             />
             {/* <button className="loginBtn" type="button"><Link to="/main">로그인</Link></button> */}
             <button
-              className={valid ? 'activeBtn' : 'noneBtn'}
+              className={isInputValid ? 'activeBtn' : 'noneBtn'}
               type="button"
               onClick={goToMain}
             >
@@ -56,7 +55,7 @@ function Login() {
             </button>
           </div>
           <p className="loginText">
-            <a href="#">비밀번호를 잊으셨나요?</a>
+            <a href="">비밀번호를 잊으셨나요?</a>
           </p>
         </div>
       </div>

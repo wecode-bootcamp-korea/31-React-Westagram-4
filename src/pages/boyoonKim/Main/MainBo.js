@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import '../Main/MainBo.scss';
-// import '.././../Styles/Common.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faHeart,
@@ -10,6 +8,7 @@ import {
 import { faArrowUpFromBracket } from '@fortawesome/free-solid-svg-icons';
 import Nav from '../../../components/Nav/Nav';
 import CommentsBox from './CommentsBox';
+import '../Main/MainBo.scss';
 
 const Main = () => {
   const [comments, setComments] = useState('');
@@ -25,7 +24,8 @@ const Main = () => {
   };
 
   function handleInput(event) {
-    setComments(event.target.value);
+    const { value } = event.target;
+    setComments(value);
   }
 
   return (
@@ -75,8 +75,8 @@ const Main = () => {
                         <FontAwesomeIcon icon={faArrowUpFromBracket} />
                       </button>
                     </li>
-                    <ul class="icons_list_bookmark">
-                      <button type="button" class="state_btn bookmark">
+                    <ul className="icons_list_bookmark">
+                      <button type="button" className="state_btn bookmark">
                         <FontAwesomeIcon icon={faBookmark} />
                       </button>
                     </ul>

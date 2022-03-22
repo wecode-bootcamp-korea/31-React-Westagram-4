@@ -6,6 +6,7 @@ import './../../../styles/common.scss';
 import './../../../styles/reset.scss';
 
 const CommentsBox = ({ value, index }) => {
+  // props 자리에서 바로 비구조화 할당
   return (
     <li key={index}>
       <div>
