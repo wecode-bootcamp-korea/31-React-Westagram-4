@@ -1,19 +1,9 @@
-import { React, useState, useEffect } from 'react';
-import '.././Main/MainJung.scss';
+import { React, useState } from 'react';
 import Comment from '../Main/Comment/Comment';
-
-function Feed({ profileName, profileUrl, feedContent }) {
+// { profileName, profileUrl, feedContent }
+function Feed(props) {
   const [comment, setComment] = useState('');
   const [commentArr, setCommentArr] = useState([]);
-  const [commentlist, setCommentlist] = useState([]);
-
-  useEffect(() => {
-    fetch('/data/commentData.jsonn')
-      .then(res => res.json())
-      .then(data => {
-        setCommentlist(data);
-      });
-  }, []);
 
   const addCo = event => {
     event.preventDefault();
@@ -31,7 +21,7 @@ function Feed({ profileName, profileUrl, feedContent }) {
           src="/image/jungsooKim/칠.avif"
           className="profileImage"
         />
-        <span className="userName">{profileName}</span>
+        <span className="userName">{props.profileName}</span>
         <img
           alt="더보기"
           className="moreIcon"
@@ -41,7 +31,7 @@ function Feed({ profileName, profileUrl, feedContent }) {
       <div className="mainFeed">
         <div className="feedBOx">
           <div className="middle">
-            <img alt="피드" className="middleImage" src={profileUrl} />
+            <img alt="피드" className="middleImage" src={props.profileUrl} />
           </div>
           <div className="bottom">
             <div className="bottom-Icon">
@@ -66,7 +56,7 @@ function Feed({ profileName, profileUrl, feedContent }) {
                 src="/image/jungsooKim/premium-icon-bookmarks-4218997.png"
               />
             </div>
-            <p>{feedContent}</p>
+            <p>{props.feedContent}</p>
             <span>~님 외 10명이 좋아합니다.</span>
             <span>더보기</span>
             <p>30분전</p>
@@ -76,15 +66,11 @@ function Feed({ profileName, profileUrl, feedContent }) {
           {commentArr.map((comment, index) => (
             <Comment comment={comment} key={index} />
           ))}
-          {commentlist.map(mape => {
-            return (
-              <ul key={mape.id}>
-                <li>{mape.username}</li>
-                <span>{mape.userCommnet}</span>
-              </ul>
-            );
+          {props.commnetData.map(list => {
+            return <li key={list.userId}>{list.commnet}</li>;
           })}
         </div>
+
         <div>
           <div className="comment" />
           <input
