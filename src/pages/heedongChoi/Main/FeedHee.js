@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import CommentList from './CommentList';
+import FeedCommentList from './FeedCommentList';
+import MyCommentList from './MyCommentList';
 
-const FeedHee = props => {
-  const { feedData, profileName, feedImg, feedContent } = props;
-
+const FeedHee = ({ feedData }) => {
   const [myComment, setMyComment] = useState({
     id: '',
     userName: 'cat',
@@ -43,13 +42,13 @@ const FeedHee = props => {
       <div className="feedHeader">
         <div className="feedHeaderLeft">
           <i className="fas fa-user-circle" />
-          <p className="feedHeaderName">{profileName}</p>
+          <p className="feedHeaderName">{feedData.profileName}</p>
         </div>
         <i className="fas fa-ellipsis-h" />
       </div>
 
       <div className="feedImg">
-        <img src={feedImg} alt="" />
+        <img src={feedData.feedImg} alt="" />
       </div>
 
       <div className="commentWrapper">
@@ -65,28 +64,31 @@ const FeedHee = props => {
         <div className="commentLike">
           <i className="fas fa-user-circle" />
           <p className="countPeopleLike">
-            <span className="name">{profileName}</span>님 외 10명이 좋아합니다
+            <span className="name">{feedData.profileName}</span>님 외 10명이
+            좋아합니다
           </p>
         </div>
 
         <div className="feedContent">
-          <p>{feedContent}</p>
+          <p>{feedData.feedContent}</p>
         </div>
 
         <ul id="commentLists">
-          {commentArray.map((comment, index) => (
-            <CommentList
-              key={index}
+          {feedData.comment.map(feedComment => (
+            <FeedCommentList
+              key={feedComment.id}
+              id={feedComment.id}
+              userName={feedComment.userName}
+              content={feedComment.commentContent}
+            />
+          ))}
+          {commentArray.map(comment => (
+            <MyCommentList
+              key={comment.id}
               id={comment.id}
               userName={comment.userName}
               content={comment.content}
             />
-          ))}
-          {feedData.comment.map(feedComment => (
-            <li key={feedComment.id}>
-              <span className="commentor">{feedComment.userName}</span>
-              <span>{feedComment.commentContent}</span>
-            </li>
           ))}
         </ul>
       </div>

@@ -1,6 +1,13 @@
-import React from 'react';
-
+import React, { useState, useEffect } from 'react';
+import Story from './Story';
 const AsideHee = () => {
+  const [storyData, setStoryData] = useState([]);
+
+  useEffect(() => {
+    fetch('/data/storyData.json')
+      .then(res => res.json())
+      .then(res => setStoryData(res));
+  }, []);
   return (
     <aside>
       <section className="sectionWrapper">
@@ -17,41 +24,13 @@ const AsideHee = () => {
           <span className="headerSecond">모두 보기</span>
         </div>
         <div className="storyInner">
-          <div className="asideUser">
-            <i className="fas fa-user-circle" />
-            <div className="asideUserInfo">
-              <p>다람쥐</p>
-              <p>2시간 전</p>
-            </div>
-          </div>
-          <div className="asideUser">
-            <i className="fas fa-user-circle" />
-            <div className="asideUserInfo">
-              <p>사자</p>
-              <p>2시간 전</p>
-            </div>
-          </div>
-          <div className="asideUser">
-            <i className="fas fa-user-circle" />
-            <div className="asideUserInfo">
-              <p>코끼리</p>
-              <p>2시간 전</p>
-            </div>
-          </div>
-          <div className="asideUser">
-            <i className="fas fa-user-circle" />
-            <div className="asideUserInfo">
-              <p>사슴</p>
-              <p>2시간 전</p>
-            </div>
-          </div>
-          <div className="asideUser">
-            <i className="fas fa-user-circle" />
-            <div className="asideUserInfo">
-              <p>토끼</p>
-              <p>2시간 전</p>
-            </div>
-          </div>
+          {storyData.map(storyData => (
+            <Story
+              key={storyData.id}
+              name={storyData.name}
+              lastLogin={storyData.lastLogin}
+            />
+          ))}
         </div>
       </div>
 

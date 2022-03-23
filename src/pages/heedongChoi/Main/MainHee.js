@@ -19,14 +19,7 @@ const MainHee = () => {
         <main className="mainContainer">
           <article>
             {feedData.map(feedData => (
-              <FeedHee
-                key={feedData.id}
-                feedData={feedData}
-                profileName={feedData.profileName}
-                feedImg={feedData.feedImg}
-                feedContent={feedData.feedContent}
-                comment={feedData.comment}
-              />
+              <FeedHee key={feedData.id} feedData={feedData} />
             ))}
           </article>
           <AsideHee />

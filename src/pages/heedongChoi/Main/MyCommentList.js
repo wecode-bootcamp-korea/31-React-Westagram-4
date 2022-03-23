@@ -1,9 +1,8 @@
 import React from 'react';
 
-const CommentList = props => {
-  const { userName, content } = props;
+const MyCommentList = ({ id, userName, content }) => {
   return (
-    <li className="commentText">
+    <li key={id} className="commentText">
       <div>
         <span className="commentor">{userName}</span>
         {content}
@@ -12,4 +11,4 @@ const CommentList = props => {
   );
 };
 
-export default CommentList;
+export default MyCommentList;
