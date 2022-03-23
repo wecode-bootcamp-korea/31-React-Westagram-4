@@ -1,97 +1,34 @@
 import '../Main/MainJung.scss';
 import Nav from '../../../components/Nav/Nav';
-import { React, useState } from 'react';
-// import { createPortal } from 'react-dom';
-import Comment from './Comment/Comment';
+import { React, useState, useEffect } from 'react';
+import Feed from '../Feed/feed';
 
 function Main() {
-  const [comment, setComment] = useState('');
-  const [commentArr, setCommentArr] = useState([]);
+  const [feed, setFeed] = useState([]);
 
-  const addCo = event => {
-    event.preventDefault();
-    setCommentArr(commentArr => [...commentArr, comment]);
+  useEffect(() => {
+    fetch('/data/feedData.json')
+      .then(res => res.json())
+      .then(data => setFeed(data));
+  }, []);
+
+  const feedMock = () => {
+    return feed.map(feed => {
+      return (
+        <Feed
+          key={feed.userId}
+          profileName={feed.profileName}
+          profileUrl={feed.profileUrl}
+          feedContent={feed.feedContent}
+        />
+      );
+    });
   };
 
-  const handleCommentInputValue = e => {
-    setComment(e.target.value);
-  };
   return (
     <>
       <Nav />
-
-      <article className="mainBox">
-        <div className="top">
-          <img
-            alt="프로필"
-            src="/image/jungsooKim/칠.avif"
-            className="profileImage"
-          />
-          <span className="userName">UserName</span>
-          <img
-            alt="더보기"
-            className="moreIcon"
-            src="/image/jungsooKim/more.png"
-          />
-        </div>
-        <div className="mainFeed">
-          <div className="feedBOx">
-            <div className="middle">
-              <img
-                alt="피드"
-                className="middleImage"
-                src="/image/jungsooKim/andrew-romanov-qlgll3u2FTk-unsplash.jpg"
-              />
-            </div>
-            <div className="bottom">
-              <div className="bottom-Icon">
-                <img
-                  alt="아이콘하트"
-                  className="icon"
-                  src="/image/jungsooKim/heart after.png"
-                />
-                <img
-                  alt="아이콘말풍선"
-                  className="icon"
-                  src="/image/jungsooKim/balloon.png"
-                />
-                <img
-                  alt="아이콘보내기"
-                  className="icon"
-                  src="/image/jungsooKim/send.png"
-                />
-                <img
-                  alt="아이콘북마크"
-                  className="icon last"
-                  src="/image/jungsooKim/premium-icon-bookmarks-4218997.png"
-                />
-              </div>
-              <span>~님 외 10명이 좋아합니다.</span>
-              <span>더보기</span>
-              <p>30분전</p>
-            </div>
-          </div>
-          <div className="commentBox">
-            {commentArr.map((comment, index) => (
-              <Comment comment={comment} key={index} />
-            ))}
-          </div>
-          <div>
-            <form className="commentForm">
-              <div className="comment" />
-              <input
-                className="commnetInput"
-                type="text"
-                placeholder="댓글달기..."
-                onChange={handleCommentInputValue}
-              />
-              <button onClick={addCo} className="commentButton" type="button">
-                개시
-              </button>
-            </form>
-          </div>
-        </div>
-      </article>
+      <article className="feeeed">{feedMock()}</article>
       <article className="mainRight">
         <div className="top">
           <img
@@ -116,7 +53,7 @@ function Main() {
                 className="profileImage"
                 src="/image/jungsooKim/일.avif"
               />
-              <div className="discribe">
+              <div className="describe">
                 <span>
                   id
                   <br className="hour" />
@@ -130,7 +67,7 @@ function Main() {
                 className="profileImage"
                 src="/image/jungsooKim/이.avif"
               />
-              <div className="discribe">
+              <div className="describe">
                 <span>
                   id
                   <br className="hour" />
@@ -144,7 +81,7 @@ function Main() {
                 className="profileImage"
                 src="/image/jungsooKim/삼.avif"
               />
-              <div className="discribe">
+              <div className="describe">
                 <span>
                   id
                   <br className="hour" />
@@ -166,7 +103,7 @@ function Main() {
                 className="profileImage"
                 src="/image/jungsooKim/사.avif"
               />
-              <div className="discribe">
+              <div className="describe">
                 <span>
                   id
                   <br className="hour" />
@@ -181,7 +118,7 @@ function Main() {
                 className="profileImage"
                 src="/image/jungsooKim/오.avif"
               />
-              <div className="discribe">
+              <div className="describe">
                 <span>
                   id
                   <br className="hour" />
@@ -196,7 +133,7 @@ function Main() {
                 className="profileImage"
                 src="/image/jungsooKim/육.avif"
               />
-              <div className="discribe">
+              <div className="describe">
                 <span>
                   id
                   <br className="hour" />
