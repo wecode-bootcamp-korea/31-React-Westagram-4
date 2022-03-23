@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "userId": "kyunghyun",
+    "feedImg": "https://images.unsplash.com/photo-1647372196772-b2839f41bd1e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80",
+    "likeUser": "k_hny"
+  },
+  {
+    "id": 2,
+    "userId": "dingding",
+    "feedImg": "/image/kyunghyunKIm/댕댕이.jpg",
+    "likeUser": "lovepuppy"
+  },
+  {
+    "id": 3,
+    "userId": "vitamin",
+    "feedImg": "/image/kyunghyunKIm/비타민.jpeg",
+    "likeUser": "kkhh"
+  }
+]

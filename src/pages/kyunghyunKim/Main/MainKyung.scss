@@ -78,7 +78,7 @@ main {
   width: 300px;
 } */
 
-.feeds {
+.feed {
   display: flex;
   justify-content: space-around;
   border: 1px solid darkgray;
@@ -183,7 +183,7 @@ article {
 aside {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   width: 250px;
   height: 100%;
 }
