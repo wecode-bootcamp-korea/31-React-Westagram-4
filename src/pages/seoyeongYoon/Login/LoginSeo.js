@@ -59,7 +59,6 @@ const Login = () => {
               {/* 조건이 비활성화되야하니까 ! 부정 으로 만들어줌 */}
               <button
                 type="submit"
-                // onKeyPress={keyPressEnter}
                 className="btn"
                 disabled={!isValid}
                 onClick={goToLogin}

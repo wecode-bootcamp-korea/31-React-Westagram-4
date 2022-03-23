@@ -1,11 +1,11 @@
 import React from 'react';
 // import '../../seoyeongYoon/Main/MainSeo.scss';
 
-const Comment = ({ comment }) => {
+const Comment = props => {
   return (
-    <>
-      <div>seo0 {comment}</div>
-    </>
+    <li>
+      <span>seo0 {props.comment}</span>
+    </li>
   );
 };
 export default Comment;

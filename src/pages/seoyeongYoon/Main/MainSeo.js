@@ -1,26 +1,32 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../../seoyeongYoon/Main/MainSeo.scss';
 import Nav from '../../../components/Nav/Nav';
 import Comment from '../Main/Comment';
+import Feed from '../Main/Feed';
 
-const Main = () => {
-  let [comment, setComment] = useState('');
-  let [commentArr, setCommentArr] = useState([]);
+const MainSeo = () => {
+  const [comment, setComment] = useState('');
+  const [commentArr, setCommentArr] = useState([]);
+  const [feedInfo, setFeedInfo] = useState([]);
 
-  const x = e => {
-    //댓글입력값
+  useEffect(() => {
+    fetch('http://localhost:3000/data/commentlist.json')
+      .then(response => response.json())
+      .then(res => console.log(res))
+      .then(data => setFeedInfo(data));
+  }, []);
+
+  //댓글입력 input
+  const commentInput = e => {
     setComment(e.target.value);
+    console.log(e.target.value);
   };
-  // const y = e => {
-  //   e.preventDefault();
-  //   setCommentArr(arr => [...arr, comment]);
-  //   setComment('');
-
-  const yy = e => {
-    e.preventDefault();
-    const y = [...commentArr]; //a라는 변수를 ...댓글 이라는 배열로 만들어줘라
-    y.push(comment); //배열의 마지막에 새로운 요소를 추가한 후, 변경된 배열의 길이를 반환
-    setCommentArr(y); //수정할땐, 변경값에 넣어줘야함
+  //댓글입력
+  const addComment = e => {
+    e.preventDefault(); //이벤트 고유의 동작을 중단시킴
+    const arr = [...commentArr]; //변수를 ...댓글 이라는 배열로 만들어줘라
+    arr.push(comment); //배열의 마지막에 새로운 요소를 추가한 후, 변경된 배열의 길이를 반환
+    setCommentArr(arr); //수정할땐, 변경값에 넣어줘야함
     setComment('');
   };
 
@@ -29,90 +35,9 @@ const Main = () => {
       <Nav />
       <div className="container">
         <main className="main_box">
-          <div className="contents_left">
-            <div className="contents_profile">
-              <img
-                class="profile"
-                src="/image/seoyeongYoon/images/위코드.png"
-                alt="profile_image"
-              />
-              <span>wecode_31</span>
-              <button className="profile_more_btn">
-                <img
-                  src="/image/seoyeongYoon/images/more.png"
-                  alt="profile_button"
-                />
-              </button>
-            </div>
-
-            <div className="contents_box">
-              <img
-                src="/image/seoyeongYoon/images/sim.jpg"
-                alt="profile_image"
-              />
-              <div className="contents_icon_groups">
-                <div className="contents_icon_groups_wrap">
-                  <div className="heart" />
-                  <img
-                    className="comment"
-                    src="/image/seoyeongYoon/images/comment.png"
-                    alt="comment_image"
-                  />
-                  <img
-                    className="upload"
-                    src="/image/seoyeongYoon/images/upload.png"
-                    alt="upload_image"
-                  />
-                </div>
-                <img
-                  className="bookmark"
-                  src="/image/seoyeongYoon/images/bookmark.png"
-                  alt="bookmark_image"
-                />
-              </div>
-              <div className="comments_box_like">
-                <img
-                  src="/image/seoyeongYoon/images/위코드.png"
-                  alt="profile_image"
-                />
-                <div className="comments_box_like_id">
-                  <span>wecode_31님 외 10명이 좋아합니다</span>
-                </div>
-              </div>
-
-              <div className="comments_text">
-                <div className="comments_info comment_list_ul">
-                  <div className="comments_tit">
-                    <span className="user_id"></span>
-                    <span className="comment_contents"></span>
-                    <div>
-                      {commentArr.map((item, index) => {
-                        return <Comment comment={item} key={index} />;
-                      })}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <form onSubmit={yy} className="comments_form">
-              <div className="input_box">
-                <input
-                  type="text"
-                  placeholder="댓글달기✏️"
-                  id="comment_input"
-                  onChange={x} //X함수값이 변경되면 발생
-                  value={comment} //벨류는 커먼트의 요소값으로 받는다?
-                />
-              </div>
-              <div className="button_box">
-                <button type="button" className="post_btn" onClick={yy}>
-                  게시
-                </button>
-              </div>
-            </form>
-          </div>
-
+          {feedInfo.map(feedInfo => (
+            <Feed key={feedInfo.id} feed={feedInfo} />
+          ))}
           <div className="side_fixed">
             <div className="side_fixed_wrap">
               <div className="contents_right">
@@ -260,7 +185,7 @@ const Main = () => {
                     src="/image/seoyeongYoon/images/위코드.png"
                     alt="profile_image"
                   />
-                  <div class="recommend_id">
+                  <div className="recommend_id">
                     <p>wecode</p>
                     <p>외 10명..</p>
                   </div>
@@ -288,4 +213,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default MainSeo;
