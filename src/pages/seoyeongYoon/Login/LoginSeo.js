@@ -10,6 +10,7 @@ const Login = () => {
     console.log(evt.target.value);
     setIdValue(evt.target.value);
   };
+
   //State 하나 만든것,
   //State를 만든이유? State에다가 데이터를 저장하라고(데이터바인딩용이)
   // 콘솔에 찍어서 상태확인
@@ -23,6 +24,17 @@ const Login = () => {
 
   const navigate = useNavigate();
   const goToLogin = () => {
+    // fetch('http://10.58.2.210:8000/users/signup', {
+    //   method: 'post',
+    //   body: JSON.stringify({
+    //     email: idValue,
+    //     password: pwValue,
+    //     name: '윤서영11',
+    //     phone_number: '010-1111-1111',
+    //   }),
+    // })
+    //   .then(response => response.json())
+    //   .then(res => console.log(res));
     navigate('/seo/main');
   };
 
@@ -31,6 +43,13 @@ const Login = () => {
       navigate('/seo/main');
     }
   };
+
+  // useEffect(() => {
+  //   fetch('http://localhost:3000/data/commentlist.json')
+  //     .then(response => response.json())
+  //     // .then(res => console.log(res))
+  //     .then(data => setFeedInfo(data));
+  // }, []);
 
   const isValid = idValue.includes('@') && pwValue.length >= 5; //버튼활성화조건
 

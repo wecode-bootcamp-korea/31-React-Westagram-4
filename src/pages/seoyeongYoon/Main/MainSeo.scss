@@ -70,6 +70,7 @@
   }
   .main_box {
     display: flex;
+    flex-direction: column;
     padding-top: 100px;
     background-color: #fff;
     .contents_left {
