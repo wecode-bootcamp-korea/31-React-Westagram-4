@@ -12,7 +12,31 @@ function Login() {
   const navigate = useNavigate();
 
   const goToMain = () => {
-    navigate('/bo/main');
+    // 로그인 페이지로 넘어가기 위해서 fetch 함수를 goToMain 안에서 실행되도록 구조를 잡는다.
+
+    fetch('http://10.58.2.11:8000/users/signin', {
+      // 백엔드가 넘겨주는 api 주소. 포트번호도 꼭 적어준다. //users/signup 회원가입
+      method: 'POST',
+      body: JSON.stringify({
+        // 해당 key와 value값은 백엔드와 정해준 형식으로 맞춰서 진행해준다.
+        // name: '김보윤',
+        email: id,
+        password: pw,
+        // phone: '01000000000',
+        // date_of_birth: '1900-01-01',
+      }),
+    })
+      .then(res => res.json())
+      .then(res => {
+        // console.log(res);// 콘솔 찍어주는거 너무 좋은것 같다!
+        if (res.token) {
+          // res.token 토큰이 있다는거 자체가 true !
+          localStorage.setItem('wrw-token', res.token);
+          navigate('/bo/main');
+        } else {
+          alert('다시 시도해주세요!');
+        }
+      });
   };
 
   function handleInput(event) {

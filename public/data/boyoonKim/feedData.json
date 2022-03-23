@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "userName": "bboyjjang",
+    "userImg": "/image/boyoonKim/03.jpg",
+    "userComment": [
+      {
+        "id": 1,
+        "name": "wecode",
+        "contents": "보윤님 공부하세요!"
+      },
+      {
+        "id": 2,
+        "name": "boyoon",
+        "contents": "열심히 하구 있는걸요"
+      },
+      {
+        "id": 3,
+        "name": "jungkook",
+        "contents": "보윤님 화이팅!"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "userName": "jjangjjang",
+    "userImg": "/image/boyoonKim/08.jpg",
+    "userComment": [
+      {
+        "id": 1,
+        "name": "bbobbi",
+        "contents": "보윤이 최고"
+      },
+      {
+        "id": 2,
+        "name": "BTS",
+        "contents": "보라해"
+      },
+      {
+        "id": 3,
+        "name": "kimArmy",
+        "contents": "방탄 없이 못살아!"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "userName": "bboyooning",
+    "userImg": "/image/boyoonKim/10.jpg",
+    "userComment": [
+      {
+        "id": 1,
+        "name": "hello world!",
+        "contents": "하루하루 성장중!"
+      },
+      {
+        "id": 2,
+        "name": "myungsung",
+        "contents": "명사!"
+      },
+      {
+        "id": 3,
+        "name": "react",
+        "contents": "약오르지?"
+      }
+    ]
+  }
+]

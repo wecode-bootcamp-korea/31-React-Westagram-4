@@ -4,6 +4,15 @@
 //   padding-left: 0px;
 // }
 
+@mixin stateBtn {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  border: none;
+  background-color: #fff;
+  font-size: 25px;
+}
+
 @mixin commentsLine {
   display: flex;
   justify-content: space-between;
@@ -37,6 +46,8 @@
     gap: 2rem;
 
     .main_feeds_left {
+      display: flex;
+      flex-direction: column;
       margin-top: 30px;
       width: 500px;
       background-color: #fff;
@@ -104,12 +115,7 @@
             li {
               @include ul;
               .state_btn {
-                width: 30px;
-                height: 30px;
-                margin-right: 10px;
-                border: none;
-                background-color: #fff;
-                font-size: 25px;
+                @include stateBtn;
               }
             }
 
@@ -119,12 +125,7 @@
               width: 100%;
 
               .state_btn {
-                width: 30px;
-                height: 30px;
-                margin-right: 10px;
-                border: none;
-                background-color: #fff;
-                font-size: 25px;
+                @include stateBtn;
               }
             }
           }

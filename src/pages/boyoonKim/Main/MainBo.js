@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faHeart,
@@ -7,141 +7,38 @@ import {
 } from '@fortawesome/free-regular-svg-icons';
 import { faArrowUpFromBracket } from '@fortawesome/free-solid-svg-icons';
 import Nav from '../../../components/Nav/Nav';
+import Feed from './Feed';
 import CommentsBox from './CommentsBox';
 import '../Main/MainBo.scss';
 
 const Main = () => {
-  const [comments, setComments] = useState('');
-  const [commentArray, setCommentArray] = useState([]);
+  const [commentList, setCommentList] = useState([]);
 
-  const onSubmit = event => {
-    event.preventDefault(); // 배열이 초기화 되지 않도록. 댓글 쌓일 수 있게
-    if (comments === '') {
-      return;
-    }
-    setCommentArray(commentsValueList => [...commentsValueList, comments]);
-    setComments('');
-  };
-
-  function handleInput(event) {
-    const { value } = event.target;
-    setComments(value);
-  }
+  useEffect(() => {
+    fetch('http://localhost:3002/data/boyoonKim/feedData.json') // api 주소로 요청을 보내고, 응답이 오면 // 경로 잘 확인할 것!
+      // .then(res => console.log(res))
+      .then(res => res.json()) // 그 응답을 받아서 가져온 형식이 json 이란 보장이 없기때문에, 이를 json파일로 변환해줘라
+      .then(data => setCommentList(data)); // 다시 그 변환된 파일을 어떤 작동을 할 수 있도록 해주는 로직임
+  }, []);
 
   return (
     <div>
       <Nav />
       <main className="main">
         <div className="main_container">
-          <div className="main_feeds_left">
-            <div className="feeds_left_box">
-              <div className="left_box_title">
-                <div className="feeds_img_box">
-                  <img
-                    alt="profile"
-                    src="/image/boyoonKim/01.jpg"
-                    className="profile_img"
-                  />
-                </div>
-                <div className="profile_info">
-                  <p className="profile_id">bboyooning</p>
-                </div>
-                <button type="button" className="feedAddBtn">
-                  <img
-                    alt="feedAddIcon"
-                    src="/image/boyoonKim/add_icon.png"
-                    className="feedAddIcon"
-                  />
-                </button>
-              </div>
-              <div className="box_mid">
-                <img alt="feed_img" src="/image/boyoonKim/02.jpg" />
-              </div>
-              <div className="box_bottom">
-                <div className="box_icons">
-                  <ul className="icons_list">
-                    <li>
-                      <button type="button" className="state_btn">
-                        <FontAwesomeIcon icon={faHeart} />
-                      </button>
-                    </li>
-                    <li>
-                      <button type="button" className="state_btn">
-                        <FontAwesomeIcon icon={faComment} flip="horizontal" />
-                      </button>
-                    </li>
-                    <li>
-                      <button type="button" className="state_btn">
-                        <FontAwesomeIcon icon={faArrowUpFromBracket} />
-                      </button>
-                    </li>
-                    <ul className="icons_list_bookmark">
-                      <button type="button" className="state_btn bookmark">
-                        <FontAwesomeIcon icon={faBookmark} />
-                      </button>
-                    </ul>
-                  </ul>
-                </div>
-                <div className="box_comments">
-                  <div className="likes_comments">
-                    <div className="likes_user">
-                      <img
-                        alt="profile"
-                        src="/image/boyoonKim/03.jpg"
-                        className="profile_img"
-                      />
-                    </div>
-                    <div className="comments_info">
-                      <p className="comments_title">
-                        <span className="user_id_span">bboyooning</span>님
-                        <span>&nbsp;외</span>
-                        <span className="likes_num">&nbsp;10명</span>이
-                        좋아합니다
-                      </p>
-                    </div>
-                  </div>
-                  <div className="comments_list">
-                    <ul className="comments_info_ul">
-                      <li>
-                        <div className="comments_title">
-                          <span className="user_id">아이디</span>
-                          <span className="comments_contents">
-                            나는 나만의 속도가 있다
-                          </span>
-                          <button type="button" className="comment_btn">
-                            더보기
-                          </button>
-                        </div>
-                        <div className="main_left_box_comment">
-                          <ul>
-                            {commentArray.map((value, index) => (
-                              <CommentsBox
-                                key={(value, index)}
-                                value={value}
-                                index={index}
-                              />
-                            ))}
-                          </ul>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="feeds_time">
-                    <p className="time">42분 전</p>
-                  </div>
-                  <form className="comments_div" onSubmit={onSubmit}>
-                    <input
-                      type="text"
-                      placeholder="댓글 달기..."
-                      value={comments}
-                      onChange={handleInput}
-                    />
-                    <button>게시</button>
-                  </form>
-                </div>
-              </div>
-            </div>
+          <div className="feedArea">
+            {commentList.map(feed => {
+              return (
+                <Feed
+                  key={feed.id}
+                  userName={feed.userName}
+                  userImg={feed.userImg}
+                  userComment={feed.userComment}
+                />
+              );
+            })}
           </div>
+
           <div className="main_feeds_right">
             <div>
               <div className="right_box_title">
