@@ -1,3 +1,5 @@
+@import '../styles/variables.scss';
+
 .loginHee {
   form {
     width: 100%;
@@ -9,7 +11,7 @@
 
     .loginContainer {
       position: relative;
-      border: 1px solid #dbdbdb;
+      border: 1px solid $sub-color;
       width: 350px;
       height: 400px;
 
@@ -21,7 +23,7 @@
         input {
           color: #9595a0;
           background-color: #fafafa;
-          border: 1px solid #dbdbdb;
+          border: 1px solid $sub-color;
           text-align: center;
           width: 258px;
           height: 36px;

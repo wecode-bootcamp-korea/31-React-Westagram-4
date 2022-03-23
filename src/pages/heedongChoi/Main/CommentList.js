@@ -1,12 +1,12 @@
 import React from 'react';
 
 const CommentList = props => {
-  const { value } = props;
+  const { userName, content } = props;
   return (
     <li className="commentText">
       <div>
-        <span className="commentor">cat</span>
-        {value}
+        <span className="commentor">{userName}</span>
+        {content}
       </div>
     </li>
   );

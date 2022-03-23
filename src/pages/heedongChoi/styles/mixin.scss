@@ -1,0 +1,28 @@
+@mixin asideWrapper($height: 150px) {
+  height: $height;
+  border: 1px solid $sub-color;
+  margin: 20px 0;
+  background-color: white;
+  overflow: auto;
+}
+
+@mixin asideUserInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+  height: 30px;
+}
+
+@mixin userName($fontSize: 10px) {
+  display: flex;
+  align-items: center;
+  height: 25px;
+  margin: 0;
+  font-size: $fontSize;
+}
+
+@mixin userNameSub {
+  color: $sub-color;
+  font-size: 8px;
+}
