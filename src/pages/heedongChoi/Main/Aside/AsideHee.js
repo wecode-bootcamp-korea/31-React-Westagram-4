@@ -1,13 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import Story from './Story';
+import FollowList from './FollowList';
+
 const AsideHee = () => {
   const [storyData, setStoryData] = useState([]);
+  const [followData, setFollowData] = useState([]);
 
   useEffect(() => {
     fetch('/data/storyData.json')
       .then(res => res.json())
       .then(res => setStoryData(res));
   }, []);
+
+  useEffect(() => {
+    fetch('/data/followData.json')
+      .then(res => res.json())
+      .then(res => setFollowData(res));
+  });
   return (
     <aside>
       <section className="sectionWrapper">
@@ -24,12 +33,8 @@ const AsideHee = () => {
           <span className="headerSecond">모두 보기</span>
         </div>
         <div className="storyInner">
-          {storyData.map(storyData => (
-            <Story
-              key={storyData.id}
-              name={storyData.name}
-              lastLogin={storyData.lastLogin}
-            />
+          {storyData.map(data => (
+            <Story key={data.id} name={data.name} lastLogin={data.lastLogin} />
           ))}
         </div>
       </div>
@@ -40,27 +45,9 @@ const AsideHee = () => {
           <span className="headerSecond">모두 보기</span>
         </div>
         <div className="contentInner">
-          <div className="asideUser">
-            <i className="fas fa-user-circle" />
-            <div className="asideUserInfo">
-              <p>호랑이</p>
-              <p>회원님을 팔로우 합니다</p>
-            </div>
-          </div>
-          <div className="asideUser">
-            <i className="fas fa-user-circle" />
-            <div className="asideUserInfo">
-              <p>물개</p>
-              <p>회원님을 팔로우 합니다</p>
-            </div>
-          </div>
-          <div className="asideUser">
-            <i className="fas fa-user-circle" />
-            <div className="asideUserInfo">
-              <p>오리</p>
-              <p>회원님을 팔로우 합니다</p>
-            </div>
-          </div>
+          {followData.map(data => (
+            <FollowList key={data.id} name={data.name} />
+          ))}
         </div>
       </div>
     </aside>
