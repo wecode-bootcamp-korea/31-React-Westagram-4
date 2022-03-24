@@ -74,9 +74,9 @@ const FeedHee = ({ feedData }) => {
         </div>
 
         <ul id="commentLists">
-          {feedData.comment.map((feedComment, index) => (
+          {feedData.comment.map(feedComment => (
             <FeedCommentList
-              key={index}
+              key={feedComment.id}
               id={feedComment.id}
               userName={feedComment.userName}
               content={feedComment.commentContent}
