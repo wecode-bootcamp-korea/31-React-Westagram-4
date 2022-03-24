@@ -1,0 +1,28 @@
+@mixin asideWrapper($height: 150px) {
+  height: $height;
+  margin: 20px 0;
+  border: 1px solid $theme-gray;
+  background-color: white;
+  overflow: auto;
+}
+
+@mixin asideUserWrapperLayout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 30px;
+  cursor: pointer;
+}
+
+@mixin asideUserNameLayout($fontSize: 10px) {
+  display: flex;
+  align-items: center;
+  height: 25px;
+  margin: 0;
+  font-size: $fontSize;
+}
+
+@mixin asideUserNameInGray {
+  color: $theme-gray;
+  font-size: 8px;
+}

@@ -1,0 +1,21 @@
+.FollowList {
+  display: flex;
+  padding: 5px;
+
+  .fa-user-circle {
+    margin-right: 10px;
+    font-size: 30px;
+  }
+
+  .asideUserInfo {
+    @include asideUserWrapperLayout;
+
+    p {
+      @include asideUserNameLayout;
+    }
+
+    p:last-child {
+      @include asideUserNameInGray;
+    }
+  }
+}

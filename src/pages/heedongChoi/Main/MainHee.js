@@ -1,7 +1,31 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import AsideHee from './Aside/AsideHee';
+import Nav from '../../../components/Nav/Nav';
+import FeedHee from './Feed/FeedHee';
+import './MainHee.scss';
 
-const Main = () => {
-  return <div></div>;
+const MainHee = () => {
+  const [feedData, setFeedData] = useState([]);
+  useEffect(() => {
+    fetch('/data/feedData.json')
+      .then(res => res.json())
+      .then(res => setFeedData(res));
+  }, []);
+  return (
+    <>
+      <Nav />
+      <div className="mainWrapper">
+        <main className="mainContainer">
+          <article>
+            {feedData.map(feedData => (
+              <FeedHee key={feedData.id} feedData={feedData} />
+            ))}
+          </article>
+          <AsideHee />
+        </main>
+      </div>
+    </>
+  );
 };
 
-export default Main;
+export default MainHee;

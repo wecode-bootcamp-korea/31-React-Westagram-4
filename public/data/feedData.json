@@ -1,0 +1,48 @@
+[
+  {
+    "id": 1,
+    "profileName": "Heedong",
+    "feedImg": "/image/heedongChoi/croffle.JPG",
+    "feedContent": "크로플 맛있다",
+    "comment": [
+      {
+        "id": 1,
+        "userName": "wecode",
+        "commentContent": "안녕"
+      },
+      {
+        "id": 2,
+        "userName": "사자",
+        "commentContent": "Hi"
+      },
+      {
+        "id": 3,
+        "userName": "오리",
+        "commentContent": "나도"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "profileName": "서은이",
+    "feedImg": "/image/heedongChoi/seoeun.JPG",
+    "feedContent": "아이스크림 맛있다",
+    "comment": [
+      {
+        "id": 1,
+        "userName": "heedong",
+        "commentContent": "서은이 귀여워"
+      },
+      {
+        "id": 2,
+        "userName": "사자",
+        "commentContent": "Hi"
+      },
+      {
+        "id": 3,
+        "userName": "오리",
+        "commentContent": "나도"
+      }
+    ]
+  }
+]

@@ -1,0 +1,78 @@
+@import '../../styles/mixin.scss';
+@import '../../styles/variables.scss';
+@import './FollowList.scss';
+@import './Story.scss';
+
+.AsideHee {
+  width: 200px;
+  height: 300px;
+  font-size: 15px;
+  font-weight: bold;
+
+  .sectionWrapper {
+    display: flex;
+    align-items: center;
+    height: 50px;
+
+    .fa-user-circle {
+      margin-right: 10px;
+      font-size: 40px;
+    }
+
+    .sectionInner {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 50px;
+      cursor: pointer;
+
+      p {
+        @include asideUserNameLayout;
+      }
+
+      p:last-child {
+        @include asideUserNameInGray;
+      }
+    }
+  }
+
+  .storyWrapper {
+    @include asideWrapper($height: 200px);
+
+    .storyHeader {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px;
+
+      .headerFirst {
+        color: $theme-gray;
+        font-size: 12px;
+      }
+
+      .headerSecond {
+        font-size: 10px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .contentWrapper {
+    @include asideWrapper;
+
+    .contentHeader {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px;
+
+      .headerFirst {
+        color: $theme-gray;
+        font-size: 12px;
+      }
+
+      .headerSecond {
+        cursor: pointer;
+        font-size: 10px;
+      }
+    }
+  }
+}
