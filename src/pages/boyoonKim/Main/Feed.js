@@ -9,7 +9,7 @@ import { faArrowUpFromBracket } from '@fortawesome/free-solid-svg-icons';
 import CommentsBox from './CommentsBox';
 // import '../Main/MainBo.scss';
 
-const Feed = props => {
+const Feed = ({ userName, userImg, userComment }) => {
   const [comments, setComments] = useState('');
   const [commentArray, setCommentArray] = useState([]);
 
@@ -27,7 +27,6 @@ const Feed = props => {
     setComments(value);
   }
 
-  const { userName, userImg, userComment } = props;
   // console.log(props.userComment);
 
   return (
