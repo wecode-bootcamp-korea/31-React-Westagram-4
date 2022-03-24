@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import './../Main/MainBo.scss';
@@ -11,7 +11,7 @@ const CommentsBox = ({ value, index }) => {
   return (
     <li className="commentLi" key={index}>
       <div>
-        <span className="userId">아이디</span>
+        <span className="userId">userId</span>
         <span clsssName="commentsContents">{value}</span>
       </div>
       <button type="button">

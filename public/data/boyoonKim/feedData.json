@@ -45,12 +45,12 @@
   },
   {
     "id": 3,
-    "userName": "bboyooning",
+    "userName": "borabora",
     "userImg": "/image/boyoonKim/10.jpg",
     "userComment": [
       {
         "id": 1,
-        "name": "hello world!",
+        "name": "hello world",
         "contents": "하루하루 성장중!"
       },
       {

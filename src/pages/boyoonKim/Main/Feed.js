@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faHeart,
@@ -26,6 +26,8 @@ const Feed = props => {
     const { value } = event.target;
     setComments(value);
   }
+
+  const { userName, userImg } = props;
   // console.log(props.userComment);
 
   return (
@@ -51,7 +53,7 @@ const Feed = props => {
           </button>
         </div>
         <div className="box_mid">
-          <img alt="feed_img" src={props.userImg} />
+          <img alt="feed_img" src={userImg} />
         </div>
         <div className="box_bottom">
           <div className="box_icons">
@@ -89,7 +91,7 @@ const Feed = props => {
               </div>
               <div className="comments_info">
                 <p className="comments_title">
-                  <span className="user_id_span">{props.userName}</span>님
+                  <span className="user_id_span">{userName}</span>님
                   <span>&nbsp;외</span>
                   <span className="likes_num">&nbsp;10명</span>이 좋아합니다
                 </p>
@@ -99,7 +101,7 @@ const Feed = props => {
               <ul className="comments_info_ul">
                 <li>
                   <div className="comments_title">
-                    <span className="user_id">아이디</span>
+                    <span className="user_id">bboyooning</span>
                     <span className="comments_contents">
                       나는 나만의 속도가 있다
                     </span>

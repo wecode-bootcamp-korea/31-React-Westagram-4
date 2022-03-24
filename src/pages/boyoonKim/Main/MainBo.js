@@ -1,21 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faHeart,
-  faComment,
-  faBookmark,
-} from '@fortawesome/free-regular-svg-icons';
-import { faArrowUpFromBracket } from '@fortawesome/free-solid-svg-icons';
+
 import Nav from '../../../components/Nav/Nav';
 import Feed from './Feed';
-import CommentsBox from './CommentsBox';
 import '../Main/MainBo.scss';
 
 const Main = () => {
   const [commentList, setCommentList] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3002/data/boyoonKim/feedData.json') // api 주소로 요청을 보내고, 응답이 오면 // 경로 잘 확인할 것!
+    fetch('/data/boyoonKim/feedData.json') // api 주소로 요청을 보내고, 응답이 오면 // 경로 잘 확인할 것!
       // .then(res => console.log(res))
       .then(res => res.json()) // 그 응답을 받아서 가져온 형식이 json 이란 보장이 없기때문에, 이를 json파일로 변환해줘라
       .then(data => setCommentList(data)); // 다시 그 변환된 파일을 어떤 작동을 할 수 있도록 해주는 로직임
@@ -38,7 +31,6 @@ const Main = () => {
               );
             })}
           </div>
-
           <div className="main_feeds_right">
             <div>
               <div className="right_box_title">
