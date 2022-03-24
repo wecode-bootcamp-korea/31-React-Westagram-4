@@ -2,7 +2,7 @@ import React from 'react';
 
 const Story = ({ name, lastLogin }) => {
   return (
-    <div className="asideUser">
+    <div className="Story">
       <i className="fas fa-user-circle" />
       <div className="asideUserInfo">
         <p>{name}</p>

@@ -1,49 +1,50 @@
 @import '../styles/variables.scss';
 
 .loginHee {
-  form {
-    width: 100%;
-    height: 100vh;
+  .loginContainerWrapper {
     display: flex;
     text-align: center;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    height: 100vh;
 
     .loginContainer {
       position: relative;
-      border: 1px solid $sub-color;
       width: 350px;
       height: 400px;
+      border: 1px solid $theme-gray;
 
-      h1 {
+      .loginHeaderLogo {
         font-family: 'Lobster', cursive;
         font-size: 50px;
       }
       .inputWrap {
         input {
-          color: #9595a0;
-          background-color: #fafafa;
-          border: 1px solid $sub-color;
           text-align: center;
           width: 258px;
           height: 36px;
           margin-bottom: 8px;
+          color: #9595a0;
+          background-color: #fafafa;
+          border: 1px solid $theme-gray;
         }
+
         .loginButtonNotActive {
+          width: 265px;
+          height: 30px;
           background-color: #b2dffc;
           border: 0px;
           border-radius: 5px;
-          width: 265px;
-          height: 30px;
           color: white;
           cursor: pointer;
         }
         .loginButtonActive {
+          width: 265px;
+          height: 30px;
           background-color: rgb(1, 82, 204);
           border: 0px;
           border-radius: 5px;
-          width: 265px;
-          height: 30px;
           color: white;
           cursor: pointer;
         }

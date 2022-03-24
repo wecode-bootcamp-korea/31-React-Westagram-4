@@ -2,7 +2,7 @@ import React from 'react';
 
 const FeedCommentList = ({ userName, content }) => {
   return (
-    <li>
+    <li className="FeedCommentList">
       <span className="commentor">{userName}</span>
       <span>{content}</span>
     </li>

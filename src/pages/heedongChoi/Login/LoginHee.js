@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../../heedongChoi/Login/LoginHee.scss';
+import './LoginHee.scss';
 
 function LoginHee() {
   const [userInfo, setUserInfo] = useState({
@@ -39,15 +39,14 @@ function LoginHee() {
     setUserInfo(userObject => ({
       ...userObject,
       [name]: value,
-      [name]: value,
     }));
   }
 
   return (
     <div className="loginHee">
-      <form action="" method="post">
+      <form className="loginContainerWrapper">
         <section className="loginContainer">
-          <h1>Westagram</h1>
+          <h1 className="loginHeaderLogo">Westagram</h1>
 
           <div className="inputWrap">
             <input

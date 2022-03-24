@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import '../Main/Aside/AsideHee';
-import AsideHee from '../Main/Aside/AsideHee';
+import AsideHee from './Aside/AsideHee';
 import Nav from '../../../components/Nav/Nav';
-import FeedHee from './FeedHee';
-import '../../heedongChoi/Main/MainHee.scss';
+import FeedHee from './Feed/FeedHee';
+import './MainHee.scss';
 
 const MainHee = () => {
   const [feedData, setFeedData] = useState([]);

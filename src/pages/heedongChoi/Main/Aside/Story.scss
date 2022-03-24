@@ -1,0 +1,21 @@
+.Story {
+  display: flex;
+  padding: 5px;
+
+  .fa-user-circle {
+    font-size: 30px;
+    margin-right: 10px;
+  }
+
+  .asideUserInfo {
+    @include asideUserWrapperLayout;
+
+    p {
+      @include asideUserNameLayout;
+    }
+
+    p:last-child {
+      @include asideUserNameInGray;
+    }
+  }
+}

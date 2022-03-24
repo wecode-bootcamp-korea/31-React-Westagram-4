@@ -18,7 +18,7 @@ const AsideHee = () => {
       .then(res => setFollowData(res));
   });
   return (
-    <aside>
+    <aside className="AsideHee">
       <section className="sectionWrapper">
         <i className="fas fa-user-circle" />
         <div className="sectionInner">

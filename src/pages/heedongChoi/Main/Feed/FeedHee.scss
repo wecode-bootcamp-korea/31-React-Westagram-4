@@ -1,0 +1,118 @@
+.FeedHee {
+  .feedHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border: 1px solid $theme-gray;
+
+    .feedHeaderLeft {
+      display: flex;
+      align-items: center;
+
+      .fa-user-circle {
+        margin-right: 10px;
+        font-size: 30px;
+      }
+
+      .feedHeaderName {
+        display: inline-block;
+        line-height: 11px;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .feedImg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid $theme-gray;
+
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .commentWrapper {
+    padding: 15px 20px;
+    border: 1px solid $theme-gray;
+
+    .commentIconWrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .commentIconWrapperLeft {
+        display: flex;
+        justify-content: space-between;
+        width: 60px;
+      }
+
+      .fa-heart {
+        color: red;
+      }
+    }
+
+    .commentLike {
+      display: flex;
+      align-items: center;
+
+      .countPeopleLike {
+        margin-left: 10px;
+        line-height: 18px;
+      }
+    }
+
+    #commentLists {
+      font-size: 14px;
+      padding: 0;
+
+      li {
+        width: 100%;
+        list-style: none;
+
+        .commentor {
+          margin-right: 10px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  .commentInputWrapper {
+    display: flex;
+    justify-content: space-between;
+    height: 10%;
+    padding: 15px 0;
+    border-top: none;
+    border: 1px solid $theme-gray;
+
+    #commentInput {
+      width: 80%;
+      height: 100%;
+      padding-left: 20px;
+      border: none;
+      font-size: 16px;
+      outline: none;
+    }
+
+    #submit {
+      float: right;
+      padding-right: 20px;
+      border: none;
+      color: skyblue;
+      background-color: white;
+      font-size: 16px;
+      outline: none;
+      cursor: pointer;
+    }
+  }
+
+  .feedGap {
+    padding: 30px;
+    border: 10px solid #f2f2f2;
+    background-color: #f2f2f2;
+  }
+}

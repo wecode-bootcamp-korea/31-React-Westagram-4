@@ -38,7 +38,7 @@ const FeedHee = ({ feedData }) => {
   };
 
   return (
-    <section className="feed">
+    <section className="FeedHee">
       <div className="feedHeader">
         <div className="feedHeaderLeft">
           <i className="fas fa-user-circle" />
