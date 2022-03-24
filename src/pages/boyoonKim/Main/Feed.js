@@ -27,7 +27,7 @@ const Feed = props => {
     setComments(value);
   }
 
-  const { userName, userImg } = props;
+  const { userName, userImg, userComment } = props;
   // console.log(props.userComment);
 
   return (
@@ -118,7 +118,7 @@ const Feed = props => {
                           index={index}
                         />
                       ))}
-                      {props.userComment.map(userComment => {
+                      {userComment.map(userComment => {
                         return (
                           <li className="userCommentLi" key={userComment.id}>
                             <div>
