@@ -1,11 +1,11 @@
 import React from 'react';
 
-const MyCommentList = ({ id, userName, content }) => {
+const MyCommentList = ({ userName, content }) => {
   return (
-    <li key={id} className="commentText">
+    <li className="commentText">
       <div>
         <span className="commentor">{userName}</span>
-        {content}
+        <span>{content}</span>
       </div>
     </li>
   );
