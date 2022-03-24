@@ -12,7 +12,6 @@ const MainHee = () => {
       .then(res => res.json())
       .then(res => setFeedData(res));
   }, []);
-  console.log(feedData);
   return (
     <>
       <Nav />
