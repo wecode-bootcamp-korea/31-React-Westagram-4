@@ -1,4 +1,15 @@
+import React, { useEffect, useState } from 'react';
+import CommonBox from './CommonBox/CommonBox';
+
 function Aside() {
+  const [CommonData, setCommonData] = useState([]);
+
+  useEffect(() => {
+    fetch('/data/CommonBox.json')
+      .then(res => res.json())
+      .then(data => setCommonData(data));
+  }, []);
+
   return (
     <article className="mainRight">
       <div className="top">
@@ -18,48 +29,9 @@ function Aside() {
           <span className="allView">모두보기</span>
         </div>
         <div className="storyContent">
-          <div className="CommonBomx">
-            <img
-              alt="프로필"
-              className="profileImage"
-              src="/image/jungsooKim/일.avif"
-            />
-            <div className="describe">
-              <span>
-                id
-                <br className="hour" />
-                hour
-              </span>
-            </div>
-          </div>
-          <div className="CommonBomx">
-            <img
-              alt="프로필"
-              className="profileImage"
-              src="/image/jungsooKim/이.avif"
-            />
-            <div className="describe">
-              <span>
-                id
-                <br className="hour" />
-                hour
-              </span>
-            </div>
-          </div>
-          <div className="CommonBomx">
-            <img
-              alt="프로필"
-              className="profileImage"
-              src="/image/jungsooKim/삼.avif"
-            />
-            <div className="describe">
-              <span>
-                id
-                <br className="hour" />
-                hour
-              </span>
-            </div>
-          </div>
+          {CommonData.map(list => {
+            return <CommonBox key={list.id} url={list.url} />;
+          })}
         </div>
       </div>
       <div className="reCommandMain">
@@ -68,51 +40,9 @@ function Aside() {
           <span className="allView">모두보기</span>
         </div>
         <div className="reCommandContent">
-          <div className="CommonBomx">
-            <img
-              alt="프로필"
-              className="profileImage"
-              src="/image/jungsooKim/사.avif"
-            />
-            <div className="describe">
-              <span>
-                id
-                <br className="hour" />
-                hour
-              </span>
-              <span className="follow">팔로우</span>
-            </div>
-          </div>
-          <div className="CommonBomx">
-            <img
-              alt="프로필"
-              className="profileImage"
-              src="/image/jungsooKim/오.avif"
-            />
-            <div className="describe">
-              <span>
-                id
-                <br className="hour" />
-                hour
-              </span>
-              <span className="follow">팔로우</span>
-            </div>
-          </div>
-          <div className="CommonBomx">
-            <img
-              alt="프로필"
-              className="profileImage"
-              src="/image/jungsooKim/육.avif"
-            />
-            <div className="describe">
-              <span>
-                id
-                <br className="hour" />
-                hour
-              </span>
-              <span className="follow">팔로우</span>
-            </div>
-          </div>
+          {CommonData.map(list => {
+            return <CommonBox key={list.id} url={list.url} />;
+          })}
         </div>
       </div>
       <div className="information">

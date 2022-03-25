@@ -1,11 +1,11 @@
 import { React, useState } from 'react';
 import Comment from '../Main/Comment/Comment';
 // { profileName, profileUrl, feedContent }
-function Feed(props) {
+function Feed({ profileName, profileUrl, feedContent, commnetData }) {
   const [comment, setComment] = useState('');
   const [commentArr, setCommentArr] = useState([]);
 
-  const addCo = event => {
+  const addComment = event => {
     event.preventDefault();
     setCommentArr(commentArr => [...commentArr, comment]);
   };
@@ -21,7 +21,7 @@ function Feed(props) {
           src="/image/jungsooKim/칠.avif"
           className="profileImage"
         />
-        <span className="userName">{props.profileName}</span>
+        <span className="userName">{profileName}</span>
         <img
           alt="더보기"
           className="moreIcon"
@@ -31,7 +31,7 @@ function Feed(props) {
       <div className="mainFeed">
         <div className="feedBOx">
           <div className="middle">
-            <img alt="피드" className="middleImage" src={props.profileUrl} />
+            <img alt="피드" className="middleImage" src={profileUrl} />
           </div>
           <div className="bottom">
             <div className="bottom-Icon">
@@ -56,7 +56,7 @@ function Feed(props) {
                 src="/image/jungsooKim/premium-icon-bookmarks-4218997.png"
               />
             </div>
-            <p>{props.feedContent}</p>
+            <p>{feedContent}</p>
             <span>~님 외 10명이 좋아합니다.</span>
             <span>더보기</span>
             <p>30분전</p>
@@ -66,7 +66,7 @@ function Feed(props) {
           {commentArr.map((comment, index) => (
             <Comment comment={comment} key={index} />
           ))}
-          {props.commnetData.map(list => {
+          {commnetData.map(list => {
             return <li key={list.userId}>{list.commnet}</li>;
           })}
         </div>
@@ -79,7 +79,7 @@ function Feed(props) {
             placeholder="댓글달기..."
             onChange={handleCommentInputValue}
           />
-          <button onClick={addCo} className="commentButton" type="button">
+          <button onClick={addComment} className="commentButton" type="button">
             개시
           </button>
         </div>

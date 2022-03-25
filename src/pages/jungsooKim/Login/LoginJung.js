@@ -4,22 +4,32 @@ import { useNavigate } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 
 function Login() {
-  const [idValue, setIdValue] = useState('');
-  const [pwValue, setPwValue] = useState('');
+  // const [idValue, setIdValue] = useState('');
+  // const [pwValue, setPwValue] = useState('');
 
-  const isLoginBtnActive = idValue.includes('@') && pwValue.length >= 5;
+  const [inputValue, setInputValue] = useState({
+    id: '',
+    pw: '',
+  });
 
-  const handleIdInput = e => {
-    setIdValue(e.target.value);
-  };
+  const { id, pw } = inputValue;
 
-  const handlePwInput = e => {
-    setPwValue(e.target.value);
-  };
+  const isLoginBtnActive = id.includes('@') && pw.length >= 5;
+
   const navigate = useNavigate();
   const goToMain = () => {
     navigate('/jung/main');
   };
+
+  const handleInputValue = e => {
+    const { value, name } = e.target;
+    setInputValue(inputValue => ({ ...inputValue, [name]: value }));
+  };
+
+  //const navigate = useNavigate();
+  // const goToMain = () => {
+  //   navigate('/jung/main');
+  // };
 
   // useEffect(() => {
   //   fetch('http://10.58.2.242:8000/users/login'/registration, {
@@ -36,18 +46,20 @@ function Login() {
   // }, []);
 
   return (
-    <div className="Main">
+    <div className="Login">
       <p className="changeFont">westagram</p>
       <input
-        onChange={handleIdInput}
+        onChange={handleInputValue}
         className="wrap id"
         type="text"
+        name="id"
         placeholder="전화번호, 사용자 이름 또는 이메일"
       />
       <input
-        onChange={handlePwInput}
+        onChange={handleInputValue}
         className="wrap password"
         type="password"
+        name="pw"
         placeholder="비밀번호"
       />
       <button
