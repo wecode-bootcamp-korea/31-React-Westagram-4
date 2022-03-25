@@ -13,7 +13,7 @@ import MainHee from './pages/heedongChoi/Main/MainHee';
 // 경현
 import LoginKyung from './pages/kyunghyunKim/Login/LoginKyung';
 import MainKyung from './pages/kyunghyunKim/Main/MainKyung';
-// 정수
+// 서영
 import LoginSeo from './pages/seoyeongYoon/Login/LoginSeo';
 import MainSeo from './pages/seoyeongYoon/Main/MainSeo';
 

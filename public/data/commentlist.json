@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "feedName": "JavaScript",
+    "feedImg": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png",
+    "feedContent": "이제 그만 만나나 했더니...",
+    "feedId": "seo0 ",
+    "commentContent": [
+      {
+        "id": 1,
+        "userId": "Rudy ",
+        "content": "hi! rudy"
+      },
+      {
+        "id": 2,
+        "userId": "lily ",
+        "content": "hi! lily"
+      },
+      {
+        "id": 3,
+        "userId": "Zara ",
+        "content": "hi! zara"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "feedName": "REACT",
+    "feedImg": "https://media.vlpt.us/images/jun17114/post/f30c2a9d-8889-4c82-9e5e-7292d7078433/hooks.png",
+    "feedContent": "더한거 만났네ㅠㅠ",
+    "feedId": "seo0 ",
+    "commentContent": [
+      {
+        "id": 1,
+        "userId": "Rudy ",
+        "content": "hi! rudy"
+      },
+      {
+        "id": 2,
+        "userId": "lily ",
+        "content": "hi! lily"
+      },
+      {
+        "id": 3,
+        "userId": "Zara ",
+        "content": "hi! zara"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "feedName": "VS CODE",
+    "feedImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDJ7ry_nf70RptiBPXBrOyeqLtJm5FFt2uFQ&usqp=CAU",
+    "feedContent": "아무말대잔치",
+    "feedId": "seo0 ",
+    "commentContent": [
+      {
+        "id": 1,
+        "userId": "Rudy ",
+        "content": "hi! rudy"
+      },
+      {
+        "id": 2,
+        "userId": "lily ",
+        "content": "hi! lily"
+      },
+      {
+        "id": 3,
+        "userId": "Zara ",
+        "content": "hi! zara"
+      }
+    ]
+  }
+]
