@@ -1,14 +1,10 @@
 @import '../../../styles/reset.scss';
 @import '../../../styles/common.scss';
 
-* {
-  box-sizing: border-box;
-  text-decoration: none;
-}
-
-.container {
+.MainSeo {
   max-width: 900px;
   margin: 0 auto;
+
   .header {
     position: fixed;
     top: 0;
@@ -19,28 +15,34 @@
     z-index: 10;
     background-color: #fff;
     border-bottom: 1px solid #dbdbdb;
+
     .wrapper {
       display: flex;
       align-items: center;
       justify-content: space-between;
       height: 50px;
+
       .logo {
         position: relative;
         display: flex;
         align-items: center;
+
         a {
           padding-right: 15px;
           box-sizing: border-box;
+
           &::after {
             content: '|';
             position: absolute;
             left: 38px;
             top: 12px;
           }
+
           img {
             width: 32px;
             margin-top: 10px;
           }
+
           .logo_text {
             font-size: 1.3rem;
             font-family: 'Lobster Two';
@@ -54,11 +56,13 @@
           outline: none;
         }
       }
+
       .nav_icon {
         .nav_icon_groups {
           display: flex;
           align-items: center;
           list-style: none;
+
           li {
             &:not(first-child) {
               padding-left: 20px;
@@ -73,22 +77,27 @@
     flex-direction: column;
     padding-top: 100px;
     background-color: #fff;
-    .contents_left {
+
+    .Feed {
       width: calc(100% - 330px);
       margin-right: 50px;
       border: 1px solid rgb(206, 205, 205);
+
       .contents_profile {
         position: relative;
         display: flex;
         align-items: center;
         padding: 15px;
+
         .profile {
           width: 30px;
           height: 30px;
         }
+
         span {
           padding-left: 12px;
         }
+
         .profile_more_btn {
           img {
             position: absolute;
@@ -101,16 +110,20 @@
           }
         }
       }
+
       .contents_box {
         img {
           width: 100%;
         }
+
         .contents_icon_groups {
           display: flex;
           justify-content: space-between;
           padding: 8px;
+
           .contents_icon_groups_wrap {
             display: flex;
+
             .heart {
               margin: 11px 10px 2px 10px;
               width: 30px;
@@ -118,11 +131,13 @@
               background-image: url(../../../assets/images/heart_off.png);
               background-repeat: no-repeat;
             }
+
             .comment {
               width: 26px;
               height: 26px;
               margin: 10px 10px 2px 6px;
             }
+
             .upload {
               width: 26px;
               height: 26px;
@@ -139,30 +154,38 @@
           display: flex;
           align-items: center;
           padding: 5px;
+
           img {
             width: 2rem;
             height: 2rem;
             margin: 4px 10px 0 6px;
           }
         }
+
         .comments_text {
           position: relative;
+
           .comment_list_ul {
             padding: 0 0 0 20px;
+
             li {
               list-style: none;
+
               .comments_tit {
                 display: flex;
                 padding: 5px 5px 17px;
+
                 .comment_contents {
                   flex-direction: column;
                 }
+
                 .small_heart {
                   position: absolute;
                   right: 15px;
                   bottom: 19px;
                   background-image: url(../../../assets/images/heart_off.png);
                   background-repeat: no-repeat;
+
                   .heart {
                     position: absolute;
                     right: 15px;
@@ -178,6 +201,7 @@
       }
       .comments_form {
         position: relative;
+
         .input_box {
           input {
             width: 100%;
@@ -190,6 +214,7 @@
             outline: none;
           }
         }
+
         .button_box {
           .post_btn {
             position: absolute;
@@ -215,19 +240,23 @@
         margin: 0 auto;
         max-width: 280px;
         background-color: #fff;
+
         .contents_right {
           display: flex;
           align-items: center;
           padding: 15px;
           width: 280px;
+
           .contents_profile_aside {
             display: flex;
             align-items: center;
+
             img {
               width: 35px;
               height: 35px;
               margin-right: 20px;
             }
+
             .profile_info {
               .info {
                 display: flex;
@@ -239,18 +268,22 @@
           border: 1px solid rgb(206, 205, 205);
           padding: 15px;
           padding-bottom: 20px;
+
           .follow_title {
             display: flex;
             justify-content: space-between;
             font-weight: $fontWeight;
           }
+
           .follow_list_scroll {
             overflow-y: auto;
             height: 200px;
-            .follow_info {
+
+            .AsideInfo {
               display: flex;
               height: 55px;
               align-items: center;
+
               img {
                 width: 35px;
                 height: 35px;
@@ -258,6 +291,7 @@
                 border-radius: 100%;
                 padding: 1px;
               }
+
               .profile_info {
                 display: flex;
                 flex-direction: column;
@@ -270,29 +304,35 @@
           padding: 15px;
           margin-top: 40px;
           border: 1px solid rgb(206, 205, 205);
+
           .recommend_title {
             display: flex;
             justify-content: space-between;
             margin-bottom: 5px;
+
             span {
               font-weight: $fontWeight;
             }
           }
+
           .recommend_info {
             position: relative;
             display: flex;
             align-items: center;
             height: 55px;
+
             img {
               width: 35px;
               height: 35px;
               margin-right: 20px;
             }
+
             a {
               position: absolute;
               right: 0;
               color: rgb(34, 119, 230);
               font-weight: $fontWeight;
+
               span {
                 font-size: 0.8rem;
               }
@@ -301,9 +341,10 @@
         }
         .footer {
           .footer_info {
-            span {
-              font-size: 0.8rem;
-              color: rgb(165, 165, 165);
+            ul {
+              display: flex;
+              flex-wrap: wrap;
+              list-style: none;
             }
           }
         }
