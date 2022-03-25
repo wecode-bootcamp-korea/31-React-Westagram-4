@@ -1,0 +1,153 @@
+.changeFont2 {
+  padding-left: 10px;
+  border-left: 1px solid black;
+  font-family: 'Lobster', cursive;
+  font: size 25px;
+}
+
+.icon {
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+}
+input[placeholder] {
+  text-align: center;
+}
+
+.moreIcon {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: 50px;
+}
+
+.top {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.mainBox {
+  border: 1px solid black;
+  float: left;
+  width: 40%;
+  margin-left: 20%;
+  margin: 5% 0 0 20%;
+}
+.middleImage {
+  width: 100%;
+}
+
+.mainRight {
+  position: fixed;
+  right: 1%;
+  top: 5%;
+  float: right;
+  width: 25%;
+  height: 599px;
+  margin: 5% 10% 0 10px;
+}
+
+.commnetInput {
+  display: inline-block;
+  width: 85%;
+  border: 0;
+}
+
+.bottom-Icon {
+  position: relative;
+}
+
+.last {
+  position: absolute;
+  right: 1px;
+}
+
+.commentButton {
+  display: inline-block;
+  background-color: white;
+  color: #cde5fb;
+  border: 0;
+}
+
+.comment {
+  border-top: 1px solid black;
+}
+
+.profileImage {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  margin: 2px 10px 2px 10px;
+}
+
+.profileSubscribe {
+  display: flex;
+  flex-direction: column;
+}
+
+.profileSub1 {
+  margin-bottom: 2px;
+}
+
+.profileSub2 {
+  margin-top: 2px;
+}
+
+.Top {
+  display: flex;
+  justify-content: space-around;
+}
+
+.CommonBomx {
+  display: flex;
+  align-items: center;
+}
+
+.reCommandContentImage {
+  display: flex;
+  align-items: center;
+}
+
+.reCommandContent {
+  position: relative;
+  width: 100%;
+  height: 150px;
+}
+
+.storyContent {
+  width: 100%;
+  height: 150px;
+  border: 1px solid black;
+  border-radius: 20px;
+}
+
+.describe {
+  align-self: center;
+}
+
+.follow {
+  position: absolute;
+  right: 10px;
+  color: #73b6f4;
+}
+
+.hour {
+  color: #a6a6a6;
+}
+
+.allView {
+  font-weight: bold;
+}
+
+.reCommandMain {
+  border: 1px solid black;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+
+li {
+  list-style: none;
+  margin-left: 10px;
+}

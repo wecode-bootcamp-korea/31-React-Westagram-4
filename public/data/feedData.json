@@ -1,0 +1,41 @@
+[
+  {
+    "userId": 1,
+    "profileName": "프로필이름1",
+    "profileUrl": "/image/jungsooKim/사.avif",
+    "feedContent": "피드컨텐츠1",
+    "commnetData": [
+      {
+        "userId": 1,
+        "userName": "ㅎㅇ",
+        "commnet": "댓글1"
+      }
+    ]
+  },
+  {
+    "userId": 2,
+    "profileName": "프로필이름2",
+    "profileUrl": "/image/jungsooKim/사.avif",
+    "feedContent": "피드컨텐츠2",
+    "commnetData": [
+      {
+        "userId": 2,
+        "userName": "ㅎㅇ",
+        "commnet": "댓글2"
+      }
+    ]
+  },
+  {
+    "userId": 3,
+    "profileName": "프로필이름3",
+    "profileUrl": "/image/jungsooKim/사.avif",
+    "feedContent": "피드컨텐츠3",
+    "commnetData": [
+      {
+        "userId": 3,
+        "userName": "ㅎㅇ",
+        "commnet": "댓글3"
+      }
+    ]
+  }
+]

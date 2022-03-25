@@ -1,0 +1,44 @@
+@import '../../../styles/common.scss';
+
+.Login {
+  border: 1px solid black;
+  position: absolute;
+  left: 40%;
+  top: 20%;
+  padding: 30px;
+
+  .changeFont {
+    position: relative;
+    font-family: 'Lobster', cursive;
+    font-size: 85px;
+    margin-top: 20px;
+  }
+
+  .wrap {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    height: 40px;
+    border: 1px solid black;
+  }
+  .button {
+    border: none;
+    background-color: #c4e1fb;
+    color: white;
+    border-radius: 5px;
+  }
+
+  .forget {
+    margin-top: 100px;
+    text-align: center;
+    color: blueviolet;
+  }
+
+  .off {
+    display: none;
+  }
+}
+
+* {
+  box-sizing: $boxSize;
+}
