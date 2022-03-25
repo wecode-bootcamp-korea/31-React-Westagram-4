@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "userName": "bboyjjang",
+    "userName": "bbojjang",
     "userImg": "/image/boyoonKim/03.jpg",
     "userComment": [
       {
@@ -24,7 +24,7 @@
   {
     "id": 2,
     "userName": "jjangjjang",
-    "userImg": "/image/boyoonKim/08.jpg",
+    "userImg": "/image/boyoonKim/01.jpg",
     "userComment": [
       {
         "id": 1,
@@ -38,19 +38,19 @@
       },
       {
         "id": 3,
-        "name": "kimArmy",
+        "name": "kim_army",
         "contents": "방탄 없이 못살아!"
       }
     ]
   },
   {
     "id": 3,
-    "userName": "borabora",
+    "userName": "borahae",
     "userImg": "/image/boyoonKim/10.jpg",
     "userComment": [
       {
         "id": 1,
-        "name": "hello world",
+        "name": "helloworld",
         "contents": "하루하루 성장중!"
       },
       {

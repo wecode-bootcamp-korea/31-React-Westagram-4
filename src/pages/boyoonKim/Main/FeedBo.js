@@ -7,15 +7,15 @@ import {
 } from '@fortawesome/free-regular-svg-icons';
 import { faArrowUpFromBracket } from '@fortawesome/free-solid-svg-icons';
 import CommentsBox from './CommentsBox';
-// import '../Main/MainBo.scss';
 
-const Feed = ({ userName, userImg, userComment }) => {
+const FeedBo = ({ userName, userImg, userComment }) => {
   const [comments, setComments] = useState('');
   const [commentArray, setCommentArray] = useState([]);
 
   const onSubmit = event => {
-    event.preventDefault(); // 배열이 초기화 되지 않도록. 댓글 쌓일 수 있게
+    event.preventDefault();
     if (comments === '') {
+      alert('댓글을 입력하세요!');
       return;
     }
     setCommentArray(commentsValueList => [...commentsValueList, comments]);
@@ -27,10 +27,8 @@ const Feed = ({ userName, userImg, userComment }) => {
     setComments(value);
   }
 
-  // console.log(props.userComment);
-
   return (
-    <div className="main_feeds_left">
+    <div className="FeedBo">
       <div className="feeds_left_box">
         <div className="left_box_title">
           <div className="feeds_img_box">
@@ -126,25 +124,12 @@ const Feed = ({ userName, userImg, userComment }) => {
                                 {userComment.contents}
                               </span>
                             </div>
-
                             <button type="button">
                               <FontAwesomeIcon icon={faHeart} />
                             </button>
                           </li>
                         );
                       })}
-                      {/* {props.userComment} */}
-                      {/* {commentList.map(comment => (
-                        <li key={comment.id}>
-                          <span className="userId">{comment.name}</span>
-                          <span className="commentsContents">
-                            {comment.contents}
-                          </span>
-                          <button type="button">
-                            <FontAwesomeIcon icon={faHeart} />
-                          </button>
-                        </li>
-                      ))} */}
                     </ul>
                   </div>
                 </li>
@@ -169,4 +154,4 @@ const Feed = ({ userName, userImg, userComment }) => {
   );
 };
 
-export default Feed;
+export default FeedBo;

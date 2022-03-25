@@ -1,37 +1,10 @@
-@import './../../../styles/common.scss';
-@import './../../../styles//reset.scss';
+@import '/src/styles/common.scss';
+@import '/src/styles/reset.scss';
+@import '../styles/mixin.scss';
+@import '../styles/variables.scss';
 
-@mixin stateBtn {
-  width: 30px;
-  height: 30px;
-  margin-right: 10px;
-  border: none;
-  background-color: #fff;
-  font-size: 25px;
-}
-
-@mixin commentsLine {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 2px;
-}
-
-@mixin commentsInfo {
-  width: 100%;
-  padding-right: 8px;
-}
-
-@mixin commentsBtn {
-  width: 30px;
-  margin-right: 3px;
-  background-color: #fff;
-  border: none;
-  font-size: 15px;
-}
-
-.main {
-  background-color: #fafafa;
+.MainBo {
+  background-color: $mainBgColor;
 
   .main_container {
     display: flex;
@@ -39,7 +12,7 @@
     gap: 2rem;
 
     .feedArea {
-      .main_feeds_left {
+      .FeedBo {
         display: flex;
         flex-direction: column;
         margin-top: 30px;
@@ -56,9 +29,7 @@
           .feeds_img_box {
             width: 50px;
             height: 50px;
-            margin-top: 10px;
-            margin-left: 10px;
-            margin-bottom: 10px;
+            margin: 10px 0 10px 10px;
             border-radius: 70%;
             overflow: hidden;
 
@@ -98,12 +69,9 @@
         }
 
         .box_bottom {
-          width: 100%;
-
           .box_icons {
             .icons_list {
               display: flex;
-              width: 100%;
               padding-left: 10px;
 
               li {
@@ -116,7 +84,6 @@
               ul {
                 display: flex;
                 justify-content: flex-end;
-                width: 100%;
 
                 .state_btn {
                   @include stateBtn;
@@ -131,7 +98,6 @@
             .likes_comments {
               display: flex;
               align-items: center;
-              width: 100%;
               margin-bottom: 10px;
               padding-left: 10px;
 
@@ -183,10 +149,12 @@
                   .main_left_box_comment {
                     ul {
                       @include ul;
-                      li {
+                      .userCommentLi,
+                      .CommentsBox {
                         @include commentsLine;
                         div {
-                          span {
+                          .userId,
+                          .commentsContents {
                             @include commentsInfo;
                           }
                         }
@@ -255,11 +223,7 @@
         padding-top: 5px;
 
         .feeds_box {
-          width: 50px;
-          height: 50px;
-          margin-left: 10px;
-          border-radius: 70%;
-          overflow: hidden;
+          @include boxStyle;
 
           .profile_img {
             width: 100%;
@@ -304,19 +268,15 @@
         scrollbar-width: none;
 
         ul {
-          .box_list_li,
-          .recommend_list_li {
+          .StoryList,
+          .RecommendList {
             display: flex;
             height: 60px;
             padding-left: 10px;
             background-color: #fff;
 
             .img_box {
-              width: 50px;
-              height: 50px;
-              margin-top: 5px;
-              border-radius: 70%;
-              overflow: hidden;
+              @include boxStyle;
 
               .profile_img {
                 width: 100%;

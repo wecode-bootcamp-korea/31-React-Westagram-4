@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "userImg": "/image/boyoonKim/05.jpg",
+    "userName": "jjangjjangs",
+    "followList": "myung_sa 외 2명이 팔로우"
+  },
+  {
+    "id": 2,
+    "userImg": "/image/boyoonKim/01.jpg",
+    "userName": "bboyooning",
+    "followList": "jungkook 외 100명이 팔로우"
+  },
+  {
+    "id": 3,
+    "userName": "wecode31",
+    "userImg": "/image/boyoonKim/02.jpg",
+    "followList": "bboyooning 외 1명이 팔로우"
+  }
+]
