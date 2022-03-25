@@ -1,0 +1,52 @@
+@mixin inputBtn {
+  width: 250px;
+  height: 35px;
+  margin-top: 7px;
+  padding: 0;
+  color: #fff;
+  border: 0;
+  border-radius: 3px;
+}
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin stateBtn {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  border: none;
+  background-color: #fff;
+  font-size: 25px;
+}
+
+@mixin commentsLine {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2px;
+}
+
+@mixin commentsInfo {
+  width: 100%;
+  padding-right: 8px;
+}
+
+@mixin commentsBtn {
+  width: 30px;
+  margin-right: 3px;
+  background-color: #fff;
+  border: none;
+  font-size: 15px;
+}
+
+@mixin boxStyle {
+  width: 50px;
+  height: 50px;
+  margin-top: 5px;
+  border-radius: 70%;
+  overflow: hidden;
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "userId": "myungsung_sarang",
+    "userImg": "/image/boyoonKim/10.jpg",
+    "loginTime": "1초전"
+  },
+  {
+    "id": 2,
+    "userId": "jungkook",
+    "userImg": "http://img.segye.com/content/image/2019/09/17/20190917503645.PNG",
+    "loginTime": "5분전"
+  },
+  {
+    "id": 3,
+    "userId": "kim_army",
+    "userImg": "/image/boyoonKim/02.jpg",
+    "loginTime": "1일전"
+  },
+  {
+    "id": 4,
+    "userId": "borahae",
+    "userImg": "/image/boyoonKim/09.jpg",
+    "loginTime": "3일전"
+  }
+]

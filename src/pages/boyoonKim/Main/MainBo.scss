@@ -1,223 +1,203 @@
-@mixin ul {
-  list-style: none;
-  padding-left: 0px;
-}
+@import '/src/styles/common.scss';
+@import '/src/styles/reset.scss';
+@import '../styles/mixin.scss';
+@import '../styles/variables.scss';
 
-.main {
-  width: 100%;
-  height: 100%;
-  background-color: #fafafa;
+.MainBo {
+  background-color: $mainBgColor;
 
   .main_container {
     display: flex;
     justify-content: center;
-    width: 100%;
-    height: 100%;
     gap: 2rem;
 
-    .main_feeds_left {
-      margin-top: 30px;
-      width: 500px;
-      background-color: #fff;
-      border: 1px solid #ededed;
-      border-radius: 4px;
-      overflow: hidden;
-
-      .left_box_title {
+    .feedArea {
+      .FeedBo {
         display: flex;
-        align-items: center;
+        flex-direction: column;
+        margin-top: 30px;
+        width: 500px;
+        background-color: #fff;
+        border: 1px solid #ededed;
+        border-radius: 4px;
+        overflow: hidden;
 
-        .feeds_img_box {
-          width: 50px;
-          height: 50px;
-          margin-top: 10px;
-          margin-left: 10px;
-          margin-bottom: 10px;
-          border-radius: 70%;
-          overflow: hidden;
+        .left_box_title {
+          display: flex;
+          align-items: center;
 
-          .profile_img {
-            width: 100%;
-            height: 100%;
-          }
-        }
+          .feeds_img_box {
+            width: 50px;
+            height: 50px;
+            margin: 10px 0 10px 10px;
+            border-radius: 70%;
+            overflow: hidden;
 
-        .profile_info {
-          width: 378px;
-          margin-left: 5px;
-          padding-bottom: 5px;
-        }
-
-        .feedAddBtn {
-          float: right;
-          width: 50px;
-          height: 50px;
-          margin-right: 10px;
-          background-color: #fff;
-          border: 0 none;
-
-          .feedAddIcon {
-            height: 40px;
-            margin: 0 auto;
-            padding-bottom: 10px;
-          }
-        }
-      }
-
-      .box_mid {
-        img {
-          width: 500px;
-          height: auto;
-        }
-      }
-
-      .box_bottom {
-        width: 100%;
-
-        .box_icons {
-          .icons_list {
-            display: flex;
-            width: 100%;
-            padding-left: 10px;
-
-            li {
-              @include ul;
-              .state_btn {
-                width: 30px;
-                height: 30px;
-                margin-right: 10px;
-                border: none;
-                background-color: #fff;
-                font-size: 25px;
-              }
-            }
-
-            ul {
-              display: flex;
-              justify-content: flex-end;
+            .profile_img {
               width: 100%;
+              height: 100%;
+            }
+          }
 
-              .state_btn {
-                width: 30px;
-                height: 30px;
-                margin-right: 10px;
-                border: none;
-                background-color: #fff;
-                font-size: 25px;
-              }
+          .profile_info {
+            width: 378px;
+            margin-left: 5px;
+            padding-bottom: 5px;
+          }
+
+          .feedAddBtn {
+            float: right;
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+            background-color: #fff;
+            border: 0 none;
+
+            .feedAddIcon {
+              height: 40px;
+              margin: 0 auto;
+              padding-bottom: 10px;
             }
           }
         }
 
-        .box_comments {
-          width: 100%;
-
-          .likes_comments {
-            display: flex;
-            align-items: center;
-            width: 100%;
-            margin-bottom: 10px;
-            padding-left: 10px;
-
-            .likes_user {
-              width: 40px;
-              height: 40px;
-              margin-top: 10px;
-              border-radius: 70%;
-              overflow: hidden;
-
-              .profile_img {
-                width: 100%;
-                height: 100%;
-              }
-            }
-
-            .comments_info {
-              height: 30px;
-              padding-top: 10px;
-              padding-left: 10px;
-
-              .comments_title {
-                height: 30px;
-              }
-            }
+        .box_mid {
+          img {
+            width: 500px;
+            height: auto;
           }
+        }
 
-          .comments_list {
-            ul {
+        .box_bottom {
+          .box_icons {
+            .icons_list {
+              display: flex;
               padding-left: 10px;
 
               li {
-                .comments_title {
-                  .user_id,
-                  .comments_contents {
-                    width: 100%;
-                    padding-right: 8px;
-                  }
-
-                  .comment_btn {
-                    width: 100px;
-                    color: #b9b9b9;
-                    background-color: #fff;
-                    border: none;
-                  }
+                @include ul;
+                .state_btn {
+                  @include stateBtn;
                 }
+              }
 
-                .comments_title_line {
-                  display: flex;
-                  justify-content: space-between;
-                  align-items: center;
+              ul {
+                display: flex;
+                justify-content: flex-end;
+
+                .state_btn {
+                  @include stateBtn;
+                }
+              }
+            }
+          }
+
+          .box_comments {
+            width: 100%;
+
+            .likes_comments {
+              display: flex;
+              align-items: center;
+              margin-bottom: 10px;
+              padding-left: 10px;
+
+              .likes_user {
+                width: 40px;
+                height: 40px;
+                margin-top: 10px;
+                border-radius: 70%;
+                overflow: hidden;
+
+                .profile_img {
+                  width: 100%;
+                  height: 100%;
+                }
+              }
+
+              .comments_info {
+                height: 20px;
+                padding-top: 10px;
+                padding-left: 10px;
+
+                .comments_title {
                   height: 30px;
+                }
+              }
+            }
 
-                  div {
+            .comments_list {
+              ul {
+                padding-left: 10px;
+
+                li {
+                  list-style: none;
+                  .comments_title {
                     .user_id,
                     .comments_contents {
                       width: 100%;
                       padding-right: 8px;
                     }
+
+                    .comment_btn {
+                      width: 100px;
+                      color: #b9b9b9;
+                      background-color: #fff;
+                      border: none;
+                    }
                   }
 
-                  button {
-                    width: 30px;
-                    margin-right: 3px;
-                    background-color: #fff;
-                    border: none;
-                    font-size: 15px;
+                  .main_left_box_comment {
+                    ul {
+                      @include ul;
+                      .userCommentLi,
+                      .CommentsBox {
+                        @include commentsLine;
+                        div {
+                          .userId,
+                          .commentsContents {
+                            @include commentsInfo;
+                          }
+                        }
+                        button {
+                          @include commentsBtn;
+                        }
+                      }
+                    }
                   }
                 }
               }
             }
-          }
 
-          .feeds_time {
-            padding-left: 10px;
-
-            p {
-              margin: 3px 0;
-              color: #b9b9b9;
-            }
-          }
-
-          .comments_div {
-            display: flex;
-            align-content: center;
-            border-top: 1px solid #000;
-
-            input {
-              width: calc(100% - 40px);
-              height: 40px;
+            .feeds_time {
               padding-left: 10px;
-              color: #b9b9b9;
-              background-color: #fff;
-              border: none;
+
+              p {
+                margin: 3px 0;
+                color: #b9b9b9;
+              }
             }
 
-            button {
-              width: 40px;
-              height: 40px;
-              color: #0096f6;
-              background-color: #fff;
-              border: none;
+            .comments_div {
+              display: flex;
+              align-content: center;
+              border-top: 1px solid #000;
+
+              input {
+                width: calc(100% - 40px);
+                height: 45px;
+                padding-left: 10px;
+                color: #b9b9b9;
+                background-color: #fff;
+                border: none;
+              }
+
+              button {
+                width: 40px;
+                height: 40px;
+                color: #0096f6;
+                background-color: #fff;
+                border: none;
+              }
             }
           }
         }
@@ -243,11 +223,7 @@
         padding-top: 5px;
 
         .feeds_box {
-          width: 50px;
-          height: 50px;
-          margin-left: 10px;
-          border-radius: 70%;
-          overflow: hidden;
+          @include boxStyle;
 
           .profile_img {
             width: 100%;
@@ -272,7 +248,6 @@
       .box_top {
         display: flex;
         justify-content: space-between;
-        height: 50px;
         padding-top: 20px;
         padding-left: 10px;
         background-color: #fff;
@@ -293,20 +268,15 @@
         scrollbar-width: none;
 
         ul {
-          .box_list_li,
-          .recommend_list_li {
+          .StoryList,
+          .RecommendList {
             display: flex;
-            justify-content: flex-start;
             height: 60px;
             padding-left: 10px;
             background-color: #fff;
 
             .img_box {
-              width: 50px;
-              height: 50px;
-              margin-top: 5px;
-              border-radius: 70%;
-              overflow: hidden;
+              @include boxStyle;
 
               .profile_img {
                 width: 100%;
@@ -319,7 +289,7 @@
               margin-left: 10px;
 
               p {
-                height: 30px;
+                height: 20px;
                 margin: 0;
                 padding-top: 10px;
               }
@@ -332,7 +302,6 @@
 
             .follow_btn {
               display: flex;
-              justify-content: flex-start;
               align-items: center;
               width: 70px;
 
@@ -360,8 +329,6 @@
     }
 
     .footer {
-      width: 100%;
-      height: 100%;
       padding-top: 10px;
       color: #b9b9b9;
       background-color: #fafafa;
