@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'; //라이브러리에서 리액트 훅을 가져와서 쓰겠다.
-import '../../seoyeongYoon/Main/MainSeo.scss';
+import './MainSeo.scss';
 import Nav from '../../../components/Nav/Nav';
 import Feed from '../Main/Feed';
 import AsideInfo from '../Main/AsideInfo';

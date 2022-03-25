@@ -1,10 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 // import '../../seoyeongYoon/Main/MainSeo.scss';
 
-const Comment = props => {
-  const userId = props.userComment.userId;
-  const content = props.userComment.content;
-
+const userComment = ({ userComment: { userId, content } }) => {
   return (
     <li>
       <span>
@@ -14,4 +11,4 @@ const Comment = props => {
     </li>
   );
 };
-export default Comment;
+export default userComment;

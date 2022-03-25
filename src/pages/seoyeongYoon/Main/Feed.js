@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Comment from '../Main/Comment';
+import Comment from '../Main/Comment.js';
 
 const Feed = ({ feedName, feedContent, commentContent, feedImg, feedId }) => {
   const [userComment, setUserComment] = useState([{ ...commentContent }]);
